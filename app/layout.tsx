@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://oportuniti-chile.alescaredriox.chatgpt.site'),
   title: 'OportuniTI — Radar de proyectos TI en Chile',
   description:
     'Licitaciones y oportunidades de proyectos tecnológicos vigentes, con requisitos y acceso directo a la fuente oficial.',
