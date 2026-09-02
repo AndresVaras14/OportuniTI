@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
 
 permissions:
   contents: read
@@ -32,6 +34,8 @@ jobs:
 
       - name: Consultar oportunidades oficiales
         run: npm run sync:opportunities
+        env:
+          CHILECOMPRA_TICKET: ${{ secrets.CHILECOMPRA_TICKET }}
 
       - name: Construir sitio estático
         run: npm run build:github

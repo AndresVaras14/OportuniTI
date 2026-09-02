@@ -5,11 +5,13 @@ Radar interno y responsive de oportunidades y licitaciones de proyectos TI en Ch
 ## Funciones
 
 - Búsqueda por proyecto, entidad o ID.
-- Filtros por región, categoría y fecha de cierre.
-- Vista predeterminada desde Santiago hacia el sur.
+- Filtros por región, categoría, fuente y fecha de cierre.
+- Vista de todo Chile con acceso rápido a Santiago hacia el sur.
 - Ficha con requisitos, documentos, contacto y enlace de postulación oficial.
-- Información oficial obtenida desde los datos abiertos OCDS de ChileCompra.
+- Información obtenida desde Mercado Público/ChileCompra, UNGM, Banco Mundial y Codelco.
+- Accesos oficiales monitoreados para BID y ENAP.
 - Respaldo local verificado cuando ChileCompra no está disponible.
+- Actualización automática cada 6 horas mediante GitHub Actions.
 
 ## Desarrollo local
 
@@ -28,4 +30,8 @@ npm run build:github
 
 La publicación ocurre con GitHub Actions cuando se autoriza un cambio en `main`.
 También puede actualizarse manualmente desde **Actions → Publicar OportuniTI en GitHub Pages → Run workflow**.
-Ese flujo consulta ChileCompra, genera el archivo estático de oportunidades y publica el resultado sin necesitar una API propia.
+Ese flujo consulta las fuentes oficiales, filtra oportunidades TI vigentes, genera el archivo estático y publica el resultado sin necesitar una API propia.
+
+Para mejorar la cobertura de Mercado Público se puede crear el secreto opcional
+`CHILECOMPRA_TICKET` en GitHub. Si no existe, el sincronizador intenta el acceso público
+y luego utiliza el conjunto OCDS de ChileCompra como respaldo.

@@ -1,4 +1,2726 @@
 {
-  "opportunities": [],
-  "lastUpdated": "2 de septiembre de 2026, 05:06 p. m."
+  "opportunities": [
+    {
+      "id": "1057432-73-LP26",
+      "title": "SERVICIO DE ARRIENDO DE 2 SERVIDORES PARA SSC",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Infraestructura TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-03T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "SERVICIO DE ARRIENDO DE 2 SERVIDORES PARA SSC",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1057432-73-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057432-73-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057432-73-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1057432-73-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1057544-283-LP26",
+      "title": "Servicio de Arriendo Microsoft Office para nuevo parque computacional",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-03T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Servicio de Arriendo Microsoft Office para nuevo parque computacional",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1057544-283-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057544-283-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057544-283-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1057544-283-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1431841-53-LE26",
+      "title": "ADQUISICIÓN DE CREDITOS GOOGLE CLOUD PLATFORM",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-03T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "ADQUISICIÓN DE CREDITOS GOOGLE CLOUD PLATFORM",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1431841-53-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1431841-53-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1431841-53-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1431841-53-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1469-176-L126",
+      "title": "SERVICIO DE SUSCRIPCIÓN DE SISTEMA DE  ASIGNACIÓN Y ADMINISTRACION DE SALAS DE  CLASES Y AUDITORIOS UNIVERSIDAD DE TALCA",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-03T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "SERVICIO DE SUSCRIPCIÓN DE SISTEMA DE  ASIGNACIÓN Y ADMINISTRACION DE SALAS DE  CLASES Y AUDITORIOS UNIVERSIDAD DE TALCA",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1469-176-L126.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1469-176-L126",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1469-176-L126",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1469-176-L126.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1213444-22-LE26",
+      "title": "ADQUISICION DE EQUIPOS TECNOLÓGICOS",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-03T15:30:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "ADQUISICION DE EQUIPOS TECNOLÓGICOS",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1213444-22-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1213444-22-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1213444-22-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1213444-22-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1483311-2-LP26",
+      "title": "SERVICIO DE ARRIENDO DE SOFTWARE DE REMUNERACIONES",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-03T17:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "SERVICIO DE ARRIENDO DE SOFTWARE DE REMUNERACIONES",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1483311-2-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1483311-2-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1483311-2-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1483311-2-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "WHO-SHQ-WHOA-EOI-26-4024",
+      "title": "Expression of Interest (EOI) for the Provision of Implementation and Support of a Global LMS",
+      "buyer": "WHO",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Infraestructura TI",
+      "publishedAt": "2026-07-22T00:00:00.000Z",
+      "deadline": "2026-09-03T21:59:00.000Z",
+      "currency": "USD",
+      "modality": "Aviso de contratación internacional",
+      "description": "Announcement 25 August 2026: - the submission deadline of this EOI was extended from 27 August 2026 23:59 hours (GMT+2) to 03 September 2026 23:59 hours (GMT+2) - the Q&A document is now available under \"Documents\" below. Announcement 19 August 2026 : the submission deadline of this EOI was extended from 20 August 2026 23:59 hours (GMT+2) to 27 August 2026 23:59 hours (GMT+2) The purpose of this Expression of Interest (EOI) is to pre-qualify a list of potential suppliers that provide s the Services of Implementation and Support of a Global LMS. See detailed EOI document and submission instructions under \" Documents \" below. Please note: it is NOT necessary to click on \"Express Interest\" on the top right-hand side of the screen. In order to inform WHO that you are interested in participating in this Expression of Interest, please follow the provisions of the EOI document below.",
+      "requirements": [
+        "Revisar elegibilidad y alcance en el aviso oficial.",
+        "Descargar los documentos indicados por la agencia.",
+        "Preparar la propuesta en el idioma y formato exigidos.",
+        "Enviar por el canal oficial antes del cierre."
+      ],
+      "documents": [
+        "Aviso oficial UNGM",
+        "Documentos de solicitud indicados por la agencia"
+      ],
+      "contactChannel": "Contacto publicado por la agencia: academyprocurement@who.int",
+      "contactEmail": "academyprocurement@who.int",
+      "sourceUrl": "https://www.ungm.org/Public/Notice/308168",
+      "applicationUrl": "https://www.ungm.org/Public/Notice/308168",
+      "sourceName": "Naciones Unidas · UNGM",
+      "sourceType": "multilateral",
+      "applicationSteps": [
+        "Abre el aviso oficial de UNGM.",
+        "Confirma países elegibles, alcance y fecha límite.",
+        "Descarga las bases o sigue el enlace de la agencia.",
+        "Envía la propuesta por el canal indicado en el aviso."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1057532-72-LE26",
+      "title": "SUSCRIPCIÓN LICENCIAS SOFTWARE CAD ARCHICAD COLLABORATE O EQUIVALENTE PARA EL SERVICIO DE SALUD OSORNO",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-04T09:01:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "SUSCRIPCIÓN LICENCIAS SOFTWARE CAD ARCHICAD COLLABORATE O EQUIVALENTE PARA EL SERVICIO DE SALUD OSORNO",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1057532-72-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057532-72-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057532-72-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1057532-72-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "14-25-LP26",
+      "title": "CONTRATACIÓN DE LICENCIAS DE ANTIVIRUS - CÓDIGO: E1O2RT9",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-04T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "CONTRATACIÓN DE LICENCIAS DE ANTIVIRUS - CÓDIGO: E1O2RT9",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 14-25-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=14-25-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=14-25-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 14-25-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2201-30-LE26",
+      "title": "SERVICIO DE ARRIENDO DE EQUIPOS Y SERVICIO DE EMISIÓN Y TRANSACCIÓN DE LICENCIAS MÉDICAS ELECTRÓNICAS",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-04T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "SERVICIO DE ARRIENDO DE EQUIPOS Y SERVICIO DE EMISIÓN Y TRANSACCIÓN DE LICENCIAS MÉDICAS ELECTRÓNICAS",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2201-30-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2201-30-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2201-30-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2201-30-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2387-73-LP26",
+      "title": "Contratación de licencia de uso y mantención de programas computacionales",
+      "buyer": "I MUNICIPALIDAD DE PUCON",
+      "region": "Araucanía",
+      "city": "Pucón",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-08-24T16:37:08.803",
+      "deadline": "2026-09-04T15:00:00",
+      "questionsDeadline": "2026-08-27T15:00:00",
+      "currency": "CLP",
+      "modality": "LP",
+      "description": "Solución informática a nivel de software, que considere los sistemas de información de gestión y planificación comunal.",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2387-73-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2387-73-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2387-73-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2387-73-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1641-323-LE26",
+      "title": "FMM - SUMINISTRO DE LICENCIA DE SOFTWARE AUTOCAD PARA OBRAS",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-04T16:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "FMM - SUMINISTRO DE LICENCIA DE SOFTWARE AUTOCAD PARA OBRAS",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1641-323-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1641-323-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1641-323-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1641-323-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1171234-5-LE26",
+      "title": "SERVICIOS DE IMPLEMENTACIÓN SOFTWARE CEDOC MNBA",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-04T20:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "SERVICIOS DE IMPLEMENTACIÓN SOFTWARE CEDOC MNBA",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1171234-5-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1171234-5-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1171234-5-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1171234-5-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1375746-16-LE26",
+      "title": "ADQUISICIÓN DE EQUIPOS TECNOLÓGICOS Y PERIFÉRICOS",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-07T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "ADQUISICIÓN DE EQUIPOS TECNOLÓGICOS Y PERIFÉRICOS",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1375746-16-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1375746-16-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1375746-16-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1375746-16-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1469-186-L126",
+      "title": "Servicio de asesoría técnica para control y automatización, mantenimiento y diseño de experiencias prácticas en equipos de Industria 4.0 del Laboratorio de Simulación y Mejora de Procesos, Escuela de Ingeniería Civil Industrial  UNIVERSIDAD DE TALCA",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Datos y automatización",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-07T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Servicio de asesoría técnica para control y automatización, mantenimiento y diseño de experiencias prácticas en equipos de Industria 4.0 del Laboratorio de Simulación y Mejora de Procesos, Escuela de Ingeniería Civil Industrial  UNIVERSIDAD DE TALCA",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1469-186-L126.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1469-186-L126",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1469-186-L126",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1469-186-L126.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1057548-20-LE26",
+      "title": "Suministro de Tóner y artículos computacionales",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-07T15:01:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Suministro de Tóner y artículos computacionales",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1057548-20-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057548-20-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057548-20-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1057548-20-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2324-109-LE26",
+      "title": "LICITACION PÚBLICA N° 52026 “CONTRATACION DE SOFTWARE CONTROL DE OBRAS Y GESTION DE PROYECTOS PARA LA INSPECCION DE OBRAS MUNICIPALES POR 3 AÑOS”",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-07T15:01:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "LICITACION PÚBLICA N° 52026 “CONTRATACION DE SOFTWARE CONTROL DE OBRAS Y GESTION DE PROYECTOS PARA LA INSPECCION DE OBRAS MUNICIPALES POR 3 AÑOS”",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2324-109-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2324-109-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2324-109-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2324-109-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2490-81-LP26",
+      "title": "“RENOVACIÓN Y ADQUISICIÓN DE SOFTWARE DE LICENCIAS AUTODESK O EQUIVALENTE 2026-2027”",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-07T15:10:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "“RENOVACIÓN Y ADQUISICIÓN DE SOFTWARE DE LICENCIAS AUTODESK O EQUIVALENTE 2026-2027”",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2490-81-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2490-81-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2490-81-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2490-81-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1007793-15-LE26",
+      "title": "SOLUCIÓN INFORMÁTICA INSTITUCIONAL PARA EL CFT",
+      "buyer": "CENTRO DE FORMACION TECNICA ESTATAL DE LA REGION DE LOS LAGOS",
+      "region": "Los Lagos",
+      "city": "Llanquihue",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-08-19T12:05:00",
+      "deadline": "2026-09-07T15:30:00",
+      "questionsDeadline": "2026-08-31T16:00:00",
+      "budget": 11300000,
+      "currency": "CLP",
+      "modality": "LE",
+      "description": "Se requiere la adquisición de una solución informática institucional para la gestión de iniciativas de vinculación con el medio del CFT Estatal de la Región de Los Lagos.",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1007793-15-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1007793-15-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1007793-15-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1007793-15-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1057780-5-LP26",
+      "title": "ADQUISICIÓN EQUIPOS TIC HOSPITAL DE CURACAUTÍN",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-07T15:30:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "ADQUISICIÓN EQUIPOS TIC HOSPITAL DE CURACAUTÍN",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1057780-5-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057780-5-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057780-5-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1057780-5-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1978-44-LE26",
+      "title": "ADQUISICIÓN DE SOLUCIÓN XDR PARA CIBERSEGURIDAD AVANZADA SERVICIO DE SALUD MAULE",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Ciberseguridad",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-07T15:30:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "ADQUISICIÓN DE SOLUCIÓN XDR PARA CIBERSEGURIDAD AVANZADA SERVICIO DE SALUD MAULE",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1978-44-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1978-44-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1978-44-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1978-44-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2273-54-LE26",
+      "title": "RENOVACIÓN Y ADQUISICIÓN DE LICENCIAS",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-07T16:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "RENOVACIÓN Y ADQUISICIÓN DE LICENCIAS",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2273-54-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2273-54-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2273-54-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2273-54-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2658-284-L126",
+      "title": "Suscripción anual a Plataforma de Inteligencia Artificial avanzada",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-07T16:58:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Suscripción anual a Plataforma de Inteligencia Artificial avanzada",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2658-284-L126.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2658-284-L126",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2658-284-L126",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2658-284-L126.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2439-28-LP26",
+      "title": "REPOSICION Y ADQUISICION EQUIPOS COMPUTACIONALES",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-08T09:30:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "REPOSICION Y ADQUISICION EQUIPOS COMPUTACIONALES",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2439-28-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2439-28-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2439-28-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2439-28-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2410-86-LE26",
+      "title": "Adquisición de artículos computacionales",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-08T10:01:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Adquisición de artículos computacionales",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2410-86-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2410-86-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2410-86-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2410-86-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2448-122-L126",
+      "title": "ADQ. BOLSA DE CREDITOS DE CONSUMO EN NUBE PUBLICA",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-08T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "ADQ. BOLSA DE CREDITOS DE CONSUMO EN NUBE PUBLICA",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2448-122-L126.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2448-122-L126",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2448-122-L126",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2448-122-L126.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1754-39-LE26",
+      "title": "EQUIPOS E INSUMOS INFORMATICOS SEGUNDO LLAMADO",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-08T15:01:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "EQUIPOS E INSUMOS INFORMATICOS SEGUNDO LLAMADO",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1754-39-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1754-39-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1754-39-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1754-39-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1242121-24-LE26",
+      "title": "Convenio de Suministro de Insumos para Unidad TIC V2 del Hospital Provincial de Ovalle",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-08T15:25:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Convenio de Suministro de Insumos para Unidad TIC V2 del Hospital Provincial de Ovalle",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1242121-24-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1242121-24-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1242121-24-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1242121-24-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1016-8-LE26",
+      "title": "Licencias de inteligencia artificial generativa tipo Claude Team o similar para la Dirección de Planeamiento",
+      "buyer": "MINISTERIO DE OBRAS PUBLICAS DIREC CION GRAL DE OO PP DCYF",
+      "region": "Metropolitana",
+      "city": "Santiago Centro",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-08-28T13:46:44.66",
+      "deadline": "2026-09-08T15:30:00",
+      "questionsDeadline": "2026-09-01T10:00:00",
+      "budget": 19980000,
+      "currency": "CLP",
+      "modality": "LE",
+      "description": "La Dirección de Planeamiento requiere adquirir licencias de inteligencia artificial generativa tipo Claude Team, en modalidad Standard y Premium, por un período de 12 meses, con el objeto de apoyar procesos institucionales de análisis documental, revisión de consistencia de información, elaboración de informes, generación de insumos de gestión, apoyo técnico y mejora de la productividad institucional.",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1016-8-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1016-8-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1016-8-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1016-8-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1456835-1-LP26",
+      "title": "SERVICIO DE ARRIENDO DE SOFTWARE DE GDP Y REMUNERA",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-08T16:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "SERVICIO DE ARRIENDO DE SOFTWARE DE GDP Y REMUNERA",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1456835-1-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1456835-1-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1456835-1-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1456835-1-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2793-121-LE26",
+      "title": "LICENCIAS DE SOFTWARE",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-09T09:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "LICENCIAS DE SOFTWARE",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2793-121-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2793-121-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2793-121-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2793-121-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1978-85-LE26",
+      "title": "Soporte Acronis Backup Cloud y Acronis Storage",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-09T11:07:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Soporte Acronis Backup Cloud y Acronis Storage",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1978-85-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1978-85-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1978-85-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1978-85-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1469-183-L126",
+      "title": "SERVICIO DE CONSULTORÍA Y DESARROLLO EN LOS MÓDULOS ERP SAP PARA DIRECCIÓN DE FINANZAS DE LA UNIVERSIDAD DE TALCA",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-09T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "SERVICIO DE CONSULTORÍA Y DESARROLLO EN LOS MÓDULOS ERP SAP PARA DIRECCIÓN DE FINANZAS DE LA UNIVERSIDAD DE TALCA",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1469-183-L126.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1469-183-L126",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1469-183-L126",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1469-183-L126.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2268-26-LR26",
+      "title": "SERVICIO DE MEJORA CONTINUA DEL SISTEMA ERP SAP PA",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-09T16:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "SERVICIO DE MEJORA CONTINUA DEL SISTEMA ERP SAP PA",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2268-26-LR26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2268-26-LR26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2268-26-LR26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2268-26-LR26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2292-58-L126",
+      "title": "SERVICIO DE RELATORÍA PARA LA CAPACITACIÓN \"CALIDAD, ACREDITACION Y CIBERSEGURIDAD EN ATENCIÓN PRIMARIA\"",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Ciberseguridad",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-09T16:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "SERVICIO DE RELATORÍA PARA LA CAPACITACIÓN \"CALIDAD, ACREDITACION Y CIBERSEGURIDAD EN ATENCIÓN PRIMARIA\"",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2292-58-L126.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2292-58-L126",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2292-58-L126",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2292-58-L126.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1057501-488-LE26",
+      "title": "ARRIENDO MODULOS BODEGA PARA INFORMÁTICA HSR",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-10T12:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "ARRIENDO MODULOS BODEGA PARA INFORMÁTICA HSR",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1057501-488-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057501-488-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057501-488-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1057501-488-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1020-45-LE26",
+      "title": "Renovación Licencias Software Solarwinds Dameware",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-10T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Renovación Licencias Software Solarwinds Dameware",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1020-45-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1020-45-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1020-45-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1020-45-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2667-85-LP26",
+      "title": "Adquisición Configuración y Puesta en Marcha de Licencias para Sistema Forense de Análisis de Videos Vitacura",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-10T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Adquisición Configuración y Puesta en Marcha de Licencias para Sistema Forense de Análisis de Videos Vitacura",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2667-85-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2667-85-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2667-85-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2667-85-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1057494-50-LR26",
+      "title": "SOFTWARE PARA LA GESTIÓN DE LA UNIDAD DE LABORATOR",
+      "buyer": "SERVICIO DE SALUD SUR HOSPITAL EXEQUIEL",
+      "region": "Metropolitana",
+      "city": "San Miguel",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-08-11T12:31:00",
+      "deadline": "2026-09-10T16:00:00",
+      "questionsDeadline": "2026-08-26T16:00:00",
+      "currency": "CLP",
+      "modality": "LR",
+      "description": "ARRIENDO DE SOFTWARE PARA LA GESTIÓN DE LA UNIDAD DE LABORATORIO CLÍNICO DEL HOSPITAL DR. EXEQUIEL GONZÁLEZ CORTÉS",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1057494-50-LR26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057494-50-LR26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057494-50-LR26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1057494-50-LR26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2963-31-LP26",
+      "title": "ARRIENDO SERVIDOR SQL Y LICENCIAMIENTO ASOCIADO",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-11T10:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "ARRIENDO SERVIDOR SQL Y LICENCIAMIENTO ASOCIADO",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2963-31-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2963-31-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2963-31-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2963-31-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1056854-6-LE26",
+      "title": "Adquisición de un Servidor en Red NAS con Instalac",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Infraestructura TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-11T13:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Adquisición de un Servidor en Red NAS con Instalac",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1056854-6-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1056854-6-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1056854-6-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1056854-6-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1057509-250-LP26",
+      "title": "CONVENIO COMPRA DE SERVICIOS DE MANTENCIÓN DE AUTOMATIZACIÓN Y CONTROL vps",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Datos y automatización",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-11T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "CONVENIO COMPRA DE SERVICIOS DE MANTENCIÓN DE AUTOMATIZACIÓN Y CONTROL vps",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1057509-250-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057509-250-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057509-250-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1057509-250-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1057822-45-LE26",
+      "title": "2DO. LL. EQUIPAMIENTO COMPUTACIONAL PARA CVMF",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-11T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "2DO. LL. EQUIPAMIENTO COMPUTACIONAL PARA CVMF",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1057822-45-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057822-45-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057822-45-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1057822-45-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1606-27-CO26",
+      "title": "ADQUISICIÓN E INSTALACIÓN DE HARDWARE SERVIDOR PMI",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Infraestructura TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-11T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "ADQUISICIÓN E INSTALACIÓN DE HARDWARE SERVIDOR PMI",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1606-27-CO26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1606-27-CO26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1606-27-CO26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1606-27-CO26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "3000-30-LE26",
+      "title": "Toner y Tintas INFORMÁTICA",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-11T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Toner y Tintas INFORMÁTICA",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 3000-30-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=3000-30-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=3000-30-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 3000-30-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1305552-6-LE26",
+      "title": "SOFTWARE DE INVENTARIO CARGA Y NORMALIZACIÓN",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-11T15:01:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "SOFTWARE DE INVENTARIO CARGA Y NORMALIZACIÓN",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1305552-6-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1305552-6-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1305552-6-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1305552-6-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1232565-34-LE26",
+      "title": "Renovación de Suscripciones de Software ULS23992",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-11T17:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Renovación de Suscripciones de Software ULS23992",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1232565-34-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1232565-34-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1232565-34-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1232565-34-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2380-46-LP26",
+      "title": "“RENOVACIÓN Y ADQUISICIÓN DE LICENCIAS PARA DOM Y",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-14T15:01:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "“RENOVACIÓN Y ADQUISICIÓN DE LICENCIAS PARA DOM Y",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2380-46-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2380-46-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2380-46-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2380-46-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1057489-237-I226",
+      "title": "Servicio de Arriendo de Infraestructura Data Center y Servidores para el HDS",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Infraestructura TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-14T16:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Servicio de Arriendo de Infraestructura Data Center y Servidores para el HDS",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1057489-237-I226.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057489-237-I226",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057489-237-I226",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1057489-237-I226.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1605-46-LP26",
+      "title": "LP-5087 Renovación Licencias IBM CMOD",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-14T16:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "LP-5087 Renovación Licencias IBM CMOD",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1605-46-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1605-46-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1605-46-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1605-46-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1172239-15-LP26",
+      "title": "COMPRA DE EQUIPOS TECNOLOGICOS LAPTOP Y DESKTOP",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-14T16:16:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "COMPRA DE EQUIPOS TECNOLOGICOS LAPTOP Y DESKTOP",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1172239-15-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1172239-15-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1172239-15-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1172239-15-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2348-34-LP26",
+      "title": "ADQUISICIÓN DE LICENCIAS DE SOFTWARE",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-15T11:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "ADQUISICIÓN DE LICENCIAS DE SOFTWARE",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2348-34-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2348-34-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2348-34-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2348-34-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1171317-79-LE26",
+      "title": "ADQUISICIÓN LICENCIAS DE SOFTWARE CHILLÁN",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-15T12:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "ADQUISICIÓN LICENCIAS DE SOFTWARE CHILLÁN",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1171317-79-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1171317-79-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1171317-79-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1171317-79-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2445-109-LP26",
+      "title": "SERVICIO SOFTWARE GESTIÓN  ASISTENCIA DEPTO. SALUD",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-15T12:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "SERVICIO SOFTWARE GESTIÓN  ASISTENCIA DEPTO. SALUD",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2445-109-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2445-109-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2445-109-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2445-109-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1020-40-LP26",
+      "title": "Serv.Cloud Amazon Web Services AWS o Equivalente",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-15T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Serv.Cloud Amazon Web Services AWS o Equivalente",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1020-40-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1020-40-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1020-40-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1020-40-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1020-46-LE26",
+      "title": "Adq. Sopor. y Actual. Software ServiceTonic MOP.",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-16T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Adq. Sopor. y Actual. Software ServiceTonic MOP.",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1020-46-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1020-46-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1020-46-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1020-46-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1075963-332-LP26",
+      "title": "SERVICIO DE ARRIENDO DE SERVIDORES y UPS",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Infraestructura TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-16T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "SERVICIO DE ARRIENDO DE SERVIDORES y UPS",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1075963-332-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1075963-332-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1075963-332-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1075963-332-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1133353-43-LR26",
+      "title": "ARRIENDO DE SOFTWARE INTEGRAL PARA LA GESTIÓN MUNICIPAL ÁREAS DE SALUD Y MUNICIPAL COMUNA DE RAUCO",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-16T17:30:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "ARRIENDO DE SOFTWARE INTEGRAL PARA LA GESTIÓN MUNICIPAL ÁREAS DE SALUD Y MUNICIPAL COMUNA DE RAUCO",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1133353-43-LR26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1133353-43-LR26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1133353-43-LR26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1133353-43-LR26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1221016-32-LP26",
+      "title": "ADQUISICIÓN DE EQUIPOS TECNOLÓGICOS 2026",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-16T18:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "ADQUISICIÓN DE EQUIPOS TECNOLÓGICOS 2026",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1221016-32-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1221016-32-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1221016-32-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1221016-32-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2408-160-LP26",
+      "title": "EQUIPOS INFORMÁTICOS PARA DEPENDENCIAS MUNICIPALES",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-17T09:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "EQUIPOS INFORMÁTICOS PARA DEPENDENCIAS MUNICIPALES",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2408-160-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2408-160-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2408-160-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2408-160-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1725-196-LE26",
+      "title": "DIFUSIÓN PLATAFORMA WEB APLICACIÓN MÓVIL CHILE CUL",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-17T11:59:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "DIFUSIÓN PLATAFORMA WEB APLICACIÓN MÓVIL CHILE CUL",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1725-196-LE26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1725-196-LE26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1725-196-LE26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1725-196-LE26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1305544-44-LR26",
+      "title": "SERVICIO DE INTERNET Y TELEFONÍA POR 24 MESES Y PROVISIÓN DE INFRAESTRUCTURA TECNOLOGICA PARA SEGURIDAD PERIMETRAL ILUMINACIÓN WIFI Y ADMINISTRACIÓN PARA LOS ESTABLECIMIENTOS EDUCACIONES Y JARDINES INFANTILES",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-21T15:01:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "SERVICIO DE INTERNET Y TELEFONÍA POR 24 MESES Y PROVISIÓN DE INFRAESTRUCTURA TECNOLOGICA PARA SEGURIDAD PERIMETRAL ILUMINACIÓN WIFI Y ADMINISTRACIÓN PARA LOS ESTABLECIMIENTOS EDUCACIONES Y JARDINES INFANTILES",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1305544-44-LR26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1305544-44-LR26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1305544-44-LR26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1305544-44-LR26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2563-34-LR26",
+      "title": "EQUIPOS PARA REDES INFORMÁTICAS Y LICENCIAS",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-21T15:01:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "EQUIPOS PARA REDES INFORMÁTICAS Y LICENCIAS",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2563-34-LR26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2563-34-LR26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2563-34-LR26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2563-34-LR26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "3084-30-LR26",
+      "title": "CONTRATACIÓN SERVICIO DE SUSCRIPCIÓN DE LICENCIAS",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-21T15:01:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "CONTRATACIÓN SERVICIO DE SUSCRIPCIÓN DE LICENCIAS",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 3084-30-LR26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=3084-30-LR26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=3084-30-LR26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 3084-30-LR26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1259850-4-LP26",
+      "title": "GORE COMPRA DE EQUIPOS INFORMATICOS",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Servicios TI",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-21T15:30:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "GORE COMPRA DE EQUIPOS INFORMATICOS",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1259850-4-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1259850-4-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1259850-4-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1259850-4-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1562-49-LR26",
+      "title": "Sistema de monitoreo integral de ciberseguridad",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Ciberseguridad",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-22T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Sistema de monitoreo integral de ciberseguridad",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1562-49-LR26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1562-49-LR26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1562-49-LR26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1562-49-LR26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1605-47-LP26",
+      "title": "LP-5153 Renovación Suscripción IBM MQ Appliance",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-22T16:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "LP-5153 Renovación Suscripción IBM MQ Appliance",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1605-47-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1605-47-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1605-47-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1605-47-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2200-23-LR26",
+      "title": "SERVICIO DE ARRIENDO DE SOFTWARE DE REGISTRO CLÍNICO ELECTRÓNICO RCE ATENCIÓN PRIMARIA - TIC",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-24T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "SERVICIO DE ARRIENDO DE SOFTWARE DE REGISTRO CLÍNICO ELECTRÓNICO RCE ATENCIÓN PRIMARIA - TIC",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2200-23-LR26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2200-23-LR26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2200-23-LR26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2200-23-LR26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1973-93-LR26",
+      "title": "SISTEMA DE INFORMACIÓN DE GESTIÓN ADMINISTRATIVA Y FARMACIA",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-24T17:30:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "SISTEMA DE INFORMACIÓN DE GESTIÓN ADMINISTRATIVA Y FARMACIA",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1973-93-LR26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1973-93-LR26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1973-93-LR26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1973-93-LR26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "2239-2-LR26",
+      "title": "Convenio Marco Desarrollo de software",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-25T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Convenio Marco Desarrollo de software",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 2239-2-LR26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2239-2-LR26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=2239-2-LR26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 2239-2-LR26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1607-13-LR26",
+      "title": "servicio SD-WAN LAN telefonía en la nube y enlaces",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-28T15:30:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "servicio SD-WAN LAN telefonía en la nube y enlaces",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1607-13-LR26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1607-13-LR26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1607-13-LR26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1607-13-LR26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1274285-45-LP26",
+      "title": "Software de gestión Droguería Comunal",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-09-28T18:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Software de gestión Droguería Comunal",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1274285-45-LP26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1274285-45-LP26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1274285-45-LP26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1274285-45-LP26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "RFPS 503950",
+      "title": "RFPS 503950 - Hosting Administration, Maintenance and Custom Development of UNICEF’s Moodle Workplace Learning Management System",
+      "buyer": "UNICEF",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Infraestructura TI",
+      "publishedAt": "2026-08-14T00:00:00.000Z",
+      "deadline": "2026-09-28T22:59:00.000Z",
+      "currency": "USD",
+      "modality": "Aviso de contratación internacional",
+      "description": "This is a public invitation to submit a proposal for Request for Proposal for Services (RFPS) 503950 for the provision Hosting Administration, Maintenance and Custom Development of UNICEF's Moodle Workplace Learning Management System (LMS) . This soliciation consists of the RFPS document and following annexes, available for download on UN Global Marketplace platform: The UNICEF General Terms and Contditions of Contract (Services) which are attached as Annex A; The Terms of Reference attached as Annex B, including Appendices B1 to B7; and Annex C, composed of Appendices C1- C6 for the pricing tables and instructions. In case of any query regarding the RFPS, please send them in writing to me, rviswanathan@unicef.org with specific reference to the RFPS number. The deadline for receipt of any questions is 28 August 2026 at 23h59 (Copenhagen Time) Please note that your proposal should be valid for no less than 180 days. Your proposal should be sent only to supplybid@unicef.org at the latest by September, 28 at 23h59 (Copenhagen Time). Kindly DO NOT copy or BCC any others in the email. Please note that Technical Proposal and Commercial Proposal must be submitted as separate emails. The",
+      "requirements": [
+        "Revisar elegibilidad y alcance en el aviso oficial.",
+        "Descargar los documentos indicados por la agencia.",
+        "Preparar la propuesta en el idioma y formato exigidos.",
+        "Enviar por el canal oficial antes del cierre."
+      ],
+      "documents": [
+        "Aviso oficial UNGM",
+        "Documentos de solicitud indicados por la agencia"
+      ],
+      "contactChannel": "Contacto publicado por la agencia: rviswanathan@unicef.org",
+      "contactEmail": "rviswanathan@unicef.org",
+      "sourceUrl": "https://www.ungm.org/Public/Notice/311133",
+      "applicationUrl": "https://www.ungm.org/Public/Notice/311133",
+      "sourceName": "Naciones Unidas · UNGM",
+      "sourceType": "multilateral",
+      "applicationSteps": [
+        "Abre el aviso oficial de UNGM.",
+        "Confirma países elegibles, alcance y fecha límite.",
+        "Descarga las bases o sigue el enlace de la agencia.",
+        "Envía la propuesta por el canal indicado en el aviso."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1057049-332-LR26",
+      "title": "JLL BASES SERVICIO DE TURNOS PROFESIONALES PARA DESARROLLO DE SOFTWARE INTERNO DEL HOSPITAL CLÍNICO SAN BORJA ARRIARÁN",
+      "buyer": "SERV SALUD METROPOLITANO CENTRAL HOSPITAL CLINICO SAN BORJA ARRIARAN",
+      "region": "Metropolitana",
+      "city": "Santiago",
+      "category": "Desarrollo de software",
+      "publishedAt": "2026-09-02T17:04:27.983",
+      "deadline": "2026-10-05T15:30:00",
+      "questionsDeadline": "2026-09-12T12:00:00",
+      "budget": 819072000,
+      "currency": "CLP",
+      "modality": "LR",
+      "description": "CONTRATACION DE TURNOS PROFESIONALES PARA DESARROLLO DE SOFTWARE INTERNO DEL HOSPITAL CLÍNICO SAN BORJA ARRIARÁN",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1057049-332-LR26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057049-332-LR26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1057049-332-LR26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1057049-332-LR26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1605-36-LR26",
+      "title": "LR-4252 Servicio de Red Datos WAN",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Datos y automatización",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-10-08T16:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "LR-4252 Servicio de Red Datos WAN",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1605-36-LR26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1605-36-LR26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1605-36-LR26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1605-36-LR26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    },
+    {
+      "id": "1020-35-LR26",
+      "title": "Serv Ingeniería y Licencias para Renovación Máximo",
+      "buyer": "Entidad pública",
+      "region": "Cobertura nacional",
+      "city": "Chile",
+      "category": "Licencias y nube",
+      "publishedAt": "2026-09-02T23:47:03.222Z",
+      "deadline": "2026-10-20T15:00:00",
+      "currency": "CLP",
+      "modality": "Licitación pública",
+      "description": "Serv Ingeniería y Licencias para Renovación Máximo",
+      "requirements": [
+        "Revisar las bases administrativas y técnicas.",
+        "Verificar habilidad para contratar con el Estado.",
+        "Presentar todos los anexos exigidos.",
+        "Confirmar fechas y cambios en la ficha oficial."
+      ],
+      "documents": [
+        "Bases y anexos de la licitación",
+        "Aclaraciones y respuestas del proceso"
+      ],
+      "contactChannel": "Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID 1020-35-LR26.",
+      "sourceUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1020-35-LR26",
+      "applicationUrl": "https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=1020-35-LR26",
+      "sourceName": "Mercado Público",
+      "sourceType": "public",
+      "applicationSteps": [
+        "Ingresa a Mercado Público y busca el ID 1020-35-LR26.",
+        "Descarga las bases, anexos y eventuales aclaraciones.",
+        "Prepara los antecedentes administrativos, técnicos y económicos solicitados.",
+        "Envía la oferta en el portal oficial antes del cierre."
+      ],
+      "sourceMode": "live"
+    }
+  ],
+  "sources": [
+    {
+      "id": "mercado-publico",
+      "name": "Mercado Público",
+      "url": "https://www.mercadopublico.cl/Home",
+      "status": "online",
+      "count": 74,
+      "detail": "Licitaciones y compras públicas de Chile."
+    },
+    {
+      "id": "ungm",
+      "name": "Naciones Unidas · UNGM",
+      "url": "https://www.ungm.org/Public/Notice",
+      "status": "online",
+      "count": 2,
+      "detail": "Procesos activos que incluyen a Chile."
+    },
+    {
+      "id": "world-bank",
+      "name": "Banco Mundial",
+      "url": "https://projects.worldbank.org/en/projects-operations/procurement",
+      "status": "empty",
+      "count": 0,
+      "detail": "Oportunidades de proyectos financiados en Chile."
+    },
+    {
+      "id": "codelco",
+      "name": "Codelco",
+      "url": "https://www.codelco.com/licitaciones-en-proceso",
+      "status": "empty",
+      "count": 0,
+      "detail": "Licitaciones corporativas publicadas en proceso."
+    },
+    {
+      "id": "bid",
+      "name": "BID",
+      "url": "https://www.iadb.org/es/como-podemos-trabajar-juntos/adquisiciones/adquisiciones-para-proyectos/avisos-de-adquisiciones",
+      "status": "portal",
+      "count": 0,
+      "detail": "Portal oficial de adquisiciones financiadas por el BID."
+    },
+    {
+      "id": "enap",
+      "name": "ENAP",
+      "url": "https://www.enap.cl/gestion-proveedores-enap",
+      "status": "portal",
+      "count": 0,
+      "detail": "Acceso al portal oficial de licitaciones activas de ENAP."
+    }
+  ],
+  "lastUpdated": "2 de septiembre de 2026, 7:47 p. m.",
+  "generatedAt": "2026-09-02T23:47:03.222Z"
 }

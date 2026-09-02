@@ -1,11 +1,17 @@
 import { StrictMode, useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { OpportunityExplorer } from '../app/opportunity-explorer';
-import { verifiedOpportunities, type Opportunity } from '../app/opportunities';
+import {
+  monitoredSources,
+  verifiedOpportunities,
+  type Opportunity,
+  type OpportunitySource,
+} from '../app/opportunities';
 import '../app/globals.css';
 
 type StaticFeed = {
   opportunities?: Opportunity[];
+  sources?: OpportunitySource[];
   lastUpdated?: string;
 };
 
@@ -19,10 +25,12 @@ const initialUpdate = new Intl.DateTimeFormat('es-CL', {
 function App() {
   const [feed, setFeed] = useState<{
     opportunities: Opportunity[];
+    sources: OpportunitySource[];
     lastUpdated: string;
     dataMode: 'live' | 'verified';
   }>({
     opportunities: verifiedOpportunities,
+    sources: monitoredSources,
     lastUpdated: initialUpdate,
     dataMode: 'verified',
   });
@@ -40,12 +48,10 @@ function App() {
 
         const payload = (await response.json()) as StaticFeed;
         const live = Array.isArray(payload.opportunities) ? payload.opportunities : [];
-        const merged = [...live, ...verifiedOpportunities].filter(
-          (item, index, all) => all.findIndex((candidate) => candidate.id === item.id) === index,
-        );
 
         setFeed({
-          opportunities: merged,
+          opportunities: live.length > 0 ? live : verifiedOpportunities,
+          sources: Array.isArray(payload.sources) ? payload.sources : monitoredSources,
           lastUpdated: payload.lastUpdated || initialUpdate,
           dataMode: live.length > 0 ? 'live' : 'verified',
         });

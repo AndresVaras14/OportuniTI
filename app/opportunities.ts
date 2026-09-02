@@ -20,7 +20,19 @@ export type Opportunity = {
   contactPhone?: string;
   sourceUrl: string;
   applicationUrl?: string;
+  sourceName?: string;
+  sourceType?: 'public' | 'multilateral' | 'corporate';
+  applicationSteps?: string[];
   sourceMode: 'live' | 'verified';
+};
+
+export type OpportunitySource = {
+  id: string;
+  name: string;
+  url: string;
+  status: 'online' | 'empty' | 'portal' | 'error';
+  count: number;
+  detail: string;
 };
 
 export const southRegions = [
@@ -34,6 +46,57 @@ export const southRegions = [
   'Los Lagos',
   'Aysén',
   'Magallanes',
+];
+
+export const monitoredSources: OpportunitySource[] = [
+  {
+    id: 'mercado-publico',
+    name: 'Mercado Público',
+    url: 'https://www.mercadopublico.cl/Home',
+    status: 'online',
+    count: 0,
+    detail: 'Licitaciones y compras públicas de Chile.',
+  },
+  {
+    id: 'ungm',
+    name: 'Naciones Unidas · UNGM',
+    url: 'https://www.ungm.org/Public/Notice',
+    status: 'online',
+    count: 0,
+    detail: 'Procesos activos con Chile como país beneficiario.',
+  },
+  {
+    id: 'world-bank',
+    name: 'Banco Mundial',
+    url: 'https://projects.worldbank.org/en/projects-operations/procurement',
+    status: 'online',
+    count: 0,
+    detail: 'Oportunidades de proyectos financiados en Chile.',
+  },
+  {
+    id: 'codelco',
+    name: 'Codelco',
+    url: 'https://www.codelco.com/licitaciones-en-proceso',
+    status: 'online',
+    count: 0,
+    detail: 'Licitaciones públicas corporativas en proceso.',
+  },
+  {
+    id: 'bid',
+    name: 'BID',
+    url: 'https://www.iadb.org/es/como-podemos-trabajar-juntos/adquisiciones/adquisiciones-para-proyectos/avisos-de-adquisiciones',
+    status: 'portal',
+    count: 0,
+    detail: 'Portal oficial de adquisiciones financiadas por el BID.',
+  },
+  {
+    id: 'enap',
+    name: 'ENAP',
+    url: 'https://www.enap.cl/gestion-proveedores-enap',
+    status: 'portal',
+    count: 0,
+    detail: 'Acceso al portal de licitaciones activas de ENAP.',
+  },
 ];
 
 export const verifiedOpportunities: Opportunity[] = [
