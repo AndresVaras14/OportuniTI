@@ -61,6 +61,7 @@ function isTechnologyText(...values) {
 function classify(textValue) {
   const text = normalize(textValue);
   if (/ciber|seguridad inform|firewall|soc\b/.test(text)) return 'Ciberseguridad';
+  if (/\blms\b|learning management|moodle/.test(text)) return 'Desarrollo de software';
   if (/licencia|suscripcion|cloud|nube|saas/.test(text)) return 'Licencias y nube';
   if (/servidor|hardware|redes|datacenter|conectividad|telecom/.test(text)) return 'Infraestructura TI';
   if (/datos|analitica|inteligencia artificial|automatizacion|rpa|api/.test(text)) return 'Datos y automatización';
@@ -87,7 +88,11 @@ async function request(url, options = {}) {
     headers: { 'User-Agent': 'OportuniTI/1.0 (+https://github.com/AndresVaras14/OportuniTI)', ...options.headers },
     signal: AbortSignal.timeout(options.timeout ?? 20_000),
   });
-  if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+  if (!response.ok) {
+    const error = new Error(`${response.status} ${response.statusText}`);
+    error.status = response.status;
+    throw error;
+  }
   return response;
 }
 
@@ -106,6 +111,10 @@ async function inBatches(values, size, worker) {
     for (const result of batch) if (result.status === 'fulfilled' && result.value) results.push(result.value);
   }
   return results;
+}
+
+function sleep(milliseconds) {
+  return new Promise((resolvePromise) => setTimeout(resolvePromise, milliseconds));
 }
 
 function future(value, now) {
@@ -132,11 +141,24 @@ function mapMarketApiTender(row, now) {
   if (!id || !title || excluded.test(normalize(title)) || !future(deadline, now) || !isTechnologyText(title, row?.Descripcion, itemText)) return null;
   const buyer = row?.Comprador ?? {};
   const text = `${title} ${row?.Descripcion ?? ''} ${itemText}`;
+  const itemSummaries = items
+    .map((item) => {
+      const name = String(item?.NombreProducto || item?.Categoria || 'Ítem solicitado').trim();
+      const description = String(item?.Descripcion || '').trim();
+      const quantity = Number(item?.Cantidad) > 0
+        ? ` · ${item.Cantidad} ${item?.UnidadMedida || 'unidad(es)'}`
+        : '';
+      return `${name}${description && normalize(description) !== normalize(name) ? `: ${description}` : ''}${quantity}`;
+    })
+    .filter(Boolean)
+    .slice(0, 5);
+  const contactName = String(buyer?.NombreContacto || buyer?.NombreUsuario || '').trim();
+  const contactRole = String(buyer?.CargoContacto || buyer?.CargoUsuario || '').trim();
   return {
     id, title,
     buyer: String(buyer?.NombreOrganismo ?? buyer?.NombreUnidad ?? 'Entidad pública'),
     region: canonicalRegion(buyer?.RegionUnidad),
-    city: String(buyer?.ComunaUnidad ?? buyer?.CiudadUnidad ?? buyer?.RegionUnidad ?? 'Chile'),
+    city: String(buyer?.ComunaUnidad || buyer?.CiudadUnidad || buyer?.RegionUnidad || 'Chile').trim(),
     category: classify(text),
     publishedAt: String(row?.Fechas?.FechaPublicacion ?? row?.FechaPublicacion ?? now.toISOString()),
     deadline: String(deadline), questionsDeadline: row?.Fechas?.FechaFinal ?? row?.Fechas?.FechaCierrePreguntas,
@@ -144,10 +166,18 @@ function mapMarketApiTender(row, now) {
     currency: row?.Moneda === 'USD' ? 'USD' : 'CLP',
     modality: String(row?.Tipo ?? row?.TipoConvocatoria ?? 'Licitación pública'),
     description: String(row?.Descripcion || title),
-    requirements: ['Revisar las bases administrativas y técnicas.', 'Verificar habilidad para contratar con el Estado.', 'Presentar todos los anexos exigidos.', 'Confirmar fechas y cambios en la ficha oficial.'],
-    documents: ['Bases y anexos de la licitación', 'Aclaraciones y respuestas del proceso'],
-    contactChannel: `Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID ${id}.`,
-    contactName: buyer?.NombreContacto, contactEmail: buyer?.CorreoContacto,
+    requirements: itemSummaries.length
+      ? itemSummaries
+      : ['Revisar las bases administrativas y técnicas.', 'Verificar habilidad para contratar con el Estado.', 'Presentar todos los anexos exigidos.', 'Confirmar fechas y cambios en la ficha oficial.'],
+    documents: [
+      'Bases administrativas y técnicas publicadas en la ficha',
+      'Anexos, aclaraciones y respuestas del proceso',
+      items.length ? `${items.length} ítem(s) informado(s) por la entidad` : 'Detalle de productos o servicios solicitados',
+    ],
+    contactChannel: contactName
+      ? `${contactName}${contactRole ? ` · ${contactRole}` : ''}. Las preguntas y ofertas se tramitan en el foro y módulo oficial de Mercado Público.`
+      : `Foro y módulo de ofertas de Mercado Público. Busca el proceso por el ID ${id}.`,
+    contactName: contactName || undefined, contactEmail: buyer?.CorreoContacto,
     contactPhone: buyer?.FonoContacto,
     sourceUrl: `https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=${encodeURIComponent(id)}`,
     applicationUrl: `https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=${encodeURIComponent(id)}`,
@@ -201,13 +231,26 @@ async function loadMarketApi(ticket, now) {
   const list = await fetchJson(`${MARKET_API}?estado=activas&ticket=${encodeURIComponent(ticket)}`);
   const rows = Array.isArray(list?.Listado) ? list.Listado : [];
   const candidates = rows.filter((row) => isTechnologyText(row?.Nombre, row?.Descripcion)).slice(0, 80);
-  return inBatches(candidates, 12, async (row) => {
+  const opportunities = [];
+  for (let index = 0; index < candidates.length; index += 1) {
+    const row = candidates[index];
     const id = row?.CodigoExterno;
-    try {
-      const detail = await fetchJson(`${MARKET_API}?codigo=${encodeURIComponent(id)}&ticket=${encodeURIComponent(ticket)}`);
-      return mapMarketApiTender(detail?.Listado?.[0] ?? row, now);
-    } catch { return mapMarketApiTender(row, now); }
-  });
+    if (index > 0) await sleep(1_250);
+    let mapped = null;
+    for (let attempt = 0; attempt < 4; attempt += 1) {
+      try {
+        const detail = await fetchJson(`${MARKET_API}?codigo=${encodeURIComponent(id)}&ticket=${encodeURIComponent(ticket)}`);
+        mapped = mapMarketApiTender(detail?.Listado?.[0] ?? row, now);
+        break;
+      } catch (error) {
+        if (error.status !== 429 || attempt === 3) break;
+        await sleep(2_500 * (attempt + 1));
+      }
+    }
+    if (!mapped) mapped = mapMarketApiTender(row, now);
+    if (mapped) opportunities.push(mapped);
+  }
+  return opportunities;
 }
 
 function recentMonths(now, count = 9) {
