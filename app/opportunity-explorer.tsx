@@ -7,6 +7,7 @@ import {
   Building2,
   CalendarDays,
   Check,
+  ChevronLeft,
   ChevronRight,
   CircleDollarSign,
   Clock3,
@@ -33,6 +34,9 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Pagination, PaginationContent, PaginationItem } from '@/components/ui/pagination';
+import { getPagination } from '../lib/pagination.mjs';
 import { southRegions, type Opportunity, type OpportunitySource } from './opportunities';
 import { categories as topicCategories, classify, isOpenOpportunity, normalize, safeUrl } from '../lib/opportunity-rules.mjs';
 
@@ -91,6 +95,8 @@ export function OpportunityExplorer({ opportunities: rawOpportunities, sources, 
   const [source, setSource] = useState('all');
   const [closing, setClosing] = useState('all');
   const [selected, setSelected] = useState<Opportunity | null>(null);
+  const [requestedPage, setRequestedPage] = useState(1);
+  const resultsHeadingRef = useRef<HTMLHeadingElement>(null);
 
   const categories = topicCategories;
   const regions = useMemo(() => Array.from(new Set(opportunities.map((item) => item.region))).sort(), [opportunities]);
@@ -109,6 +115,14 @@ export function OpportunityExplorer({ opportunities: rawOpportunities, sources, 
         && (closing === 'all' || (closing === 'undated' ? !item.deadline : days <= Number(closing)));
     }).sort((a, b) => (Date.parse(a.deadline || '') || Infinity) - (Date.parse(b.deadline || '') || Infinity));
   }, [category, closing, opportunities, query, source, zone]);
+
+  const { page, totalPages, startIndex, endIndex } = getPagination(results.length, requestedPage);
+  const visibleResults = results.slice(startIndex, endIndex);
+  function changePage(nextPage: number) {
+    setRequestedPage(nextPage);
+    resultsHeadingRef.current?.focus({ preventScroll: true });
+    resultsHeadingRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
+  }
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#020617] text-slate-100">
@@ -184,21 +198,21 @@ export function OpportunityExplorer({ opportunities: rawOpportunities, sources, 
             <label htmlFor="opportunity-search" className="relative block">
               <span className="sr-only">Buscar oportunidades</span>
               <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-cyan-300/60" />
-              <Input id="opportunity-search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Proyecto, entidad, región o ID…" className="h-13 rounded-2xl border border-sky-300/10 bg-[#030b1c] pl-11 text-sm text-white shadow-none placeholder:text-slate-600 focus-visible:border-cyan-300/40 focus-visible:ring-2 focus-visible:ring-cyan-400/15" />
+              <Input id="opportunity-search" value={query} onChange={(event) => { setQuery(event.target.value); setRequestedPage(1); }} placeholder="Proyecto, entidad, región o ID…" className="h-13 rounded-2xl border border-sky-300/10 bg-[#030b1c] pl-11 text-sm text-white shadow-none placeholder:text-slate-600 focus-visible:border-cyan-300/40 focus-visible:ring-2 focus-visible:ring-cyan-400/15" />
             </label>
-            <Filter label="Zona o región" value={zone} onChange={setZone}>
+            <Filter label="Zona o región" value={zone} onChange={(value) => { setZone(value); setRequestedPage(1); }}>
               <option value="all">Todo Chile</option><option value="sur">Santiago al sur</option>
               {regions.map((item) => <option key={item} value={item}>{item}</option>)}
             </Filter>
-            <Filter label="Categoría" value={category} onChange={setCategory}>
+            <Filter label="Categoría" value={category} onChange={(value) => { setCategory(value); setRequestedPage(1); }}>
               <option value="all">Todas las áreas TI</option>
               {categories.map((item) => <option key={item} value={item}>{item}</option>)}
             </Filter>
-            <Filter label="Fuente" value={source} onChange={setSource}>
+            <Filter label="Fuente" value={source} onChange={(value) => { setSource(value); setRequestedPage(1); }}>
               <option value="all">Todas las fuentes</option>
               {activeSourceNames.map((item) => <option key={item} value={item}>{item}</option>)}
             </Filter>
-            <Filter label="Plazo de cierre" value={closing} onChange={setClosing}>
+            <Filter label="Plazo de cierre" value={closing} onChange={(value) => { setClosing(value); setRequestedPage(1); }}>
               <option value="all">Cualquier cierre</option><option value="3">Próximos 3 días</option><option value="7">Próximos 7 días</option><option value="14">Próximos 14 días</option><option value="30">Próximos 30 días</option><option value="undated">Sin cierre publicado</option>
             </Filter>
           </div>
@@ -208,18 +222,20 @@ export function OpportunityExplorer({ opportunities: rawOpportunities, sources, 
         <div className="mb-6 mt-9 flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[.2em] text-cyan-300/60">Oportunidades abiertas</p>
-            <h2 className="mt-1 text-2xl font-extrabold tracking-[-.04em] text-white sm:text-3xl">{results.length} proyectos para revisar</h2>
+            <h2 ref={resultsHeadingRef} tabIndex={-1} className="mt-1 scroll-mt-6 text-2xl font-extrabold tracking-[-.04em] text-white outline-none sm:text-3xl">{results.length} proyectos para revisar</h2>
+            <p role="status" className="mt-2 text-sm text-slate-400">{results.length ? `Mostrando ${startIndex + 1}–${endIndex} de ${results.length} · 30 por página` : '0 resultados'}</p>
           </div>
           <p className="flex items-center gap-2 text-xs text-slate-400"><Clock3 className="size-3.5 text-cyan-300" /> Actualizado {lastUpdated} · {dataMode === 'live' ? 'lectura automática' : 'respaldo verificado'}</p>
         </div>
 
+        {totalPages > 1 ? <ResultsPagination page={page} totalPages={totalPages} onPageChange={changePage} /> : null}
         {results.length ? (
           <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {results.map((item, index) => {
+            {visibleResults.map((item, index) => {
               const days = remainingDays(item.deadline);
               return (
                 <button type="button" key={`${item.sourceName}-${item.id}`} onClick={() => setSelected(item)} className="opportunity-card group relative flex min-h-[370px] flex-col overflow-hidden rounded-[26px] border border-sky-300/12 bg-[#071126]/92 p-6 text-left transition duration-300 hover:-translate-y-1 hover:border-cyan-300/40 hover:shadow-[0_20px_70px_rgba(14,165,233,.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300">
-                  <span className="absolute right-5 top-3 font-mono text-5xl font-bold text-sky-300/[.04]">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="absolute right-5 top-3 font-mono text-5xl font-bold text-sky-300/[.04]">{String(startIndex + index + 1).padStart(2, '0')}</span>
                   <div className="relative flex flex-wrap items-center gap-2">
                     <span className="rounded-full border border-cyan-300/20 bg-cyan-400/10 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[.13em] text-cyan-200">{item.category}</span>
                     <span className={`ml-auto rounded-full px-3 py-1.5 text-[10px] font-bold ${days <= 3 ? 'bg-rose-400/15 text-rose-200' : 'bg-violet-400/10 text-violet-200'}`}>{deadlineLabel(item.deadline)}</span>
@@ -241,6 +257,7 @@ export function OpportunityExplorer({ opportunities: rawOpportunities, sources, 
         ) : (
           <div className="rounded-[26px] border border-dashed border-sky-300/20 bg-slate-950/35 px-6 py-16 text-center"><SlidersHorizontal className="mx-auto size-7 text-cyan-300/50" /><h3 className="mt-4 text-lg font-bold text-white">No encontramos coincidencias</h3><p className="mt-1 text-sm text-slate-500">Prueba otra región, fuente, categoría o plazo.</p></div>
         )}
+        {totalPages > 1 ? <ResultsPagination page={page} totalPages={totalPages} onPageChange={changePage} /> : null}
       </section>
 
       <footer className="relative z-10 border-t border-sky-300/10 bg-[#01040d]/80 px-5 py-8 sm:px-8 lg:px-12">
@@ -250,6 +267,17 @@ export function OpportunityExplorer({ opportunities: rawOpportunities, sources, 
       <OpportunityDialog selected={selected} onClose={() => setSelected(null)} />
     </main>
   );
+}
+
+function ResultsPagination({ page, totalPages, onPageChange }: { page: number; totalPages: number; onPageChange: (page: number) => void }) {
+  const buttonClass = 'h-11 min-w-11 rounded-xl border border-sky-300/20 bg-[#071126] px-3 text-sky-100 hover:bg-sky-400/15 hover:text-white focus-visible:ring-cyan-300 disabled:opacity-35';
+  return <Pagination aria-label="Páginas de oportunidades" className="my-6">
+    <PaginationContent className="gap-2 sm:gap-4">
+      <PaginationItem><Button type="button" variant="outline" className={buttonClass} disabled={page === 1} onClick={() => onPageChange(page - 1)} aria-label="Página anterior"><ChevronLeft className="size-4" /><span className="hidden sm:inline">Anterior</span></Button></PaginationItem>
+      <PaginationItem><span className="whitespace-nowrap text-sm font-semibold text-cyan-200">Página {page} de {totalPages}</span></PaginationItem>
+      <PaginationItem><Button type="button" variant="outline" className={buttonClass} disabled={page === totalPages} onClick={() => onPageChange(page + 1)} aria-label="Página siguiente"><span className="hidden sm:inline">Siguiente</span><ChevronRight className="size-4" /></Button></PaginationItem>
+    </PaginationContent>
+  </Pagination>;
 }
 
 function Filter({ label, value, onChange, children }: { label: string; value: string; onChange: (value: string) => void; children: ReactNode }) {
