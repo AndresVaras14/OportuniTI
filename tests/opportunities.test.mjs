@@ -1,10 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { classify, isOpenOpportunity, isTechnologyText, zonedISO, safeUrl } from '../lib/opportunity-rules.mjs';
+import { classify, isOpenOpportunity, isTechnologyText, isProcurementTechnology, isChileProcurement, zonedISO, safeUrl } from '../lib/opportunity-rules.mjs';
 import { mapCodelcoRow, mapMarketApiTender } from '../scripts/sync-opportunities.mjs';
 import { loadFreelancer, mapFreelancerProject, mapUndpNotice, undpDate, htmlText } from '../scripts/sources/additional-sources.mjs';
 
 const now = new Date('2026-09-04T12:00:00Z');
+test('procurement portal instructions and appliance features do not imply IT work',()=>{
+  assert.equal(isProcurementTechnology('Aplicación de prueba piloto a establecimientos','Consulte las guías del sitio web del PNUD https://oraclecloud.com'),false);
+  assert.equal(isProcurementTechnology('Equipamiento de refrigeración','Programación de carga y conectividad Bluetooth en balanza'),false);
+  assert.equal(isProcurementTechnology('Servicios para el proyecto','Se requiere desarrollo de software para análisis de datos'),true);
+  assert.equal(isChileProcurement('Chile'),true);
+  assert.equal(isChileProcurement('Multiple destinations (see the Countries or territories tab)'),false);
+  assert.equal(isChileProcurement(undefined),false);
+});
 for (const [title, expected] of [
   ['Instalación de software antivirus','Instalación y configuración'],
   ['Instalación de software de desarrollo','Instalación y configuración'],

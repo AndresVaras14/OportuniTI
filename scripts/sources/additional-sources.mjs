@@ -1,4 +1,4 @@
-import { classify, isTechnologyText, normalize, safeUrl, zonedISO } from '../../lib/opportunity-rules.mjs';
+import { classify, isTechnologyText, isProcurementTechnology, safeUrl, zonedISO } from '../../lib/opportunity-rules.mjs';
 
 export function htmlText(html) {
   const named = {nbsp:' ',amp:'&',quot:'"',apos:"'",lt:'<',gt:'>',aacute:'á',eacute:'é',iacute:'í',oacute:'ó',uacute:'ú',ntilde:'ñ',uuml:'ü'};
@@ -72,7 +72,7 @@ export function mapUndpNotice(html, url, now) {
   const description=htmlText(body);
   // Avoid treating the standard Quantum supplier-portal instructions as IT scope.
   const scope=description.split(/Scope of Work|Objetivo|Antecedentes|El Programa|El proyecto/i).slice(1).join(' ') || description;
-  if(!isTechnologyText(title) && !/(?:software|informatic|computador|ciberseguridad|base de datos|automatizacion|desarrollo web)/.test(normalize(scope))) return null;
+  if(!isProcurementTechnology(title,scope)) return null;
   const email=metadata.Contact?.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i)?.[0];
   const documentLinks=[...body.matchAll(/<a[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/gi)]
     .map(m=>({title:htmlText(m[2]),url:safeUrl(m[1].replace(/&amp;/g,'&'),url)}))

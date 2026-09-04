@@ -1,8 +1,8 @@
-import { writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
-import { classify, isTechnologyText, normalize, safeUrl, zonedISO } from '../lib/opportunity-rules.mjs';
+import { classify, isTechnologyText, isProcurementTechnology, isChileProcurement, normalize, safeUrl, zonedISO } from '../lib/opportunity-rules.mjs';
 import { htmlText, loadFreelancer, loadUndp } from './sources/additional-sources.mjs';
 
 const OUTPUT = resolve('public/live-opportunities.json');
@@ -357,7 +357,8 @@ async function loadUngm(now) {
     const detail = decodeHtml(detailHtml);
     const descriptionHtml = detailHtml.split(/<div class="title">Description<\/div>/i)[1]?.split(/<div class="accessibilityTabs">/i)[0];
     const description = descriptionHtml ? htmlText(descriptionHtml) : ungmDescription(detail, title);
-    if (!isTechnologyText(title, description)) return null;
+    const beneficiaries = detail.match(/Beneficiary countries or territories:\s*(.*?)\s+(?:Registration level:|Published on:)/i)?.[1];
+    if (!isChileProcurement(beneficiaries) || !isProcurementTechnology(title, description)) return null;
     if (/(el salvador|gaza|gambia|haiti|central african republic|\bdrc\b|sub-sahara)/i.test(decodeHtml(title))) return null;
     const email = detail.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i)?.[0];
     const agency = ungmCell(block, 'resultAgency') || 'Naciones Unidas';
@@ -448,6 +449,18 @@ async function collectSource(definition, loader, now) {
 
 export async function syncOpportunities() {
 const now = new Date();
+// A code publication can reuse a recently verified, committed snapshot.
+// Scheduled and manually requested runs always query every source again.
+if (process.env.REUSE_FRESH_FEED === 'true') {
+  try {
+    const snapshot = JSON.parse(await readFile(OUTPUT, 'utf8'));
+    const age = now.getTime() - Date.parse(snapshot.generatedAt);
+    if (age >= 0 && age < 2 * 3_600_000 && snapshot.opportunities?.length && snapshot.sources?.length >= 9) {
+      console.log(`Se publica el feed comprobado a las ${snapshot.generatedAt}; la actualización programada sigue activa.`);
+      return;
+    }
+  } catch { /* Missing or invalid snapshots are regenerated below. */ }
+}
 const loaders = [loadMercadoPublico, loadUngm, loadWorldBank, loadCodelco,
   (date)=>loadFreelancer(date,{fetchJson}), (date)=>loadUndp(date,{fetchText})];
 const collected = await Promise.all(SOURCE_DEFINITIONS.map((definition, index) => collectSource(definition, loaders[index], now)));

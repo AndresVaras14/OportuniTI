@@ -35,6 +35,7 @@ npm run build:github
 La publicación ocurre con GitHub Actions cuando se autoriza un cambio en `main`.
 También puede actualizarse manualmente desde **Actions → Publicar OportuniTI en GitHub Pages → Run workflow**.
 Ese flujo consulta las fuentes oficiales, filtra oportunidades TI vigentes, genera el archivo estático y publica el resultado sin necesitar una API propia.
+En publicaciones de código reutiliza el feed incluido en el commit si fue comprobado hace menos de dos horas; conserva su fecha real de consulta. Las ejecuciones programadas y manuales siempre vuelven a consultar las fuentes. UNGM solo admite avisos cuyo país beneficiario sea explícitamente Chile; no presenta convocatorias globales como proyectos chilenos.
 
 No es una cobertura exhaustiva de todo el mercado: algunas fuentes exigen acceso para anexos/contactos, y pueden limitar peticiones. El feed público no incluye contenido privado. Los plazos se muestran en hora de Chile continental, incluyendo cambios de horario. Los textos originales de proyectos en otros idiomas se preservan.
 

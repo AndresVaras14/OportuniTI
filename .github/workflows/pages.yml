@@ -40,6 +40,7 @@ jobs:
         run: npm run sync:opportunities
         env:
           CHILECOMPRA_TICKET: ${{ secrets.CHILECOMPRA_TICKET }}
+          REUSE_FRESH_FEED: ${{ github.event_name == 'push' }}
 
       - name: Construir sitio estático
         run: npm run build:github
