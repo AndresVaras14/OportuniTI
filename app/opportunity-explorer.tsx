@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState, type ComponentType, type ReactNode } from 'react';
+import { useEffect, useMemo, useRef, useState, type ComponentType, type ReactNode } from 'react';
 import {
   ArrowUpRight,
   Binary,
@@ -266,8 +266,21 @@ function TechBackground() {
 }
 
 function OpportunityDialog({ selected, onClose }: { selected: Opportunity | null; onClose: () => void }) {
+  const contentRef = useRef<HTMLDivElement>(null);
   return <Dialog open={Boolean(selected)} onOpenChange={(open) => !open && onClose()}>{selected ? (
-    <DialogContent className="max-h-[92vh] overflow-y-auto border-sky-300/20 bg-[#050d20] p-0 text-slate-100 shadow-[0_0_90px_rgba(14,165,233,.2)] sm:max-w-3xl">
+    <DialogContent
+      key={selected.id}
+      ref={contentRef}
+      initialFocus={() => {
+        // Focus the popup, not a contact/application link farther down the file.
+        const content = contentRef.current;
+        if (content) {
+          content.scrollTop = 0;
+          content.scrollLeft = 0;
+        }
+        return content;
+      }}
+      className="max-h-[92vh] overflow-y-auto border-sky-300/20 bg-[#050d20] p-0 text-slate-100 shadow-[0_0_90px_rgba(14,165,233,.2)] sm:max-w-3xl">
       <div className="relative overflow-hidden border-b border-sky-300/10 bg-[radial-gradient(circle_at_85%_10%,rgba(124,58,237,.25),transparent_35%),linear-gradient(135deg,#07152e,#030817)] px-6 pb-8 pt-9 sm:px-9">
         <div className="absolute right-8 top-7 text-cyan-300/10"><Cpu className="size-24" /></div>
         <div className="relative flex flex-wrap items-center gap-2"><span className="rounded-full border border-cyan-300/25 bg-cyan-400/10 px-3 py-1 text-[9px] font-bold uppercase tracking-[.13em] text-cyan-200">{selected.category}</span><span className="rounded-full bg-violet-400/15 px-3 py-1 text-[9px] font-bold uppercase tracking-[.13em] text-violet-200">{deadlineLabel(selected.deadline)}</span></div>
