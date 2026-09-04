@@ -449,13 +449,12 @@ async function collectSource(definition, loader, now) {
 
 export async function syncOpportunities() {
 const now = new Date();
-// A code publication can reuse a recently verified, committed snapshot.
-// Scheduled and manually requested runs always query every source again.
+// A code publication reuses the committed verified snapshot so UI changes are not
+// blocked by rate-limited providers. Scheduled and manual runs refresh every source.
 if (process.env.REUSE_FRESH_FEED === 'true') {
   try {
     const snapshot = JSON.parse(await readFile(OUTPUT, 'utf8'));
-    const age = now.getTime() - Date.parse(snapshot.generatedAt);
-    if (age >= 0 && age < 2 * 3_600_000 && snapshot.opportunities?.length && snapshot.sources?.length >= 9) {
+    if (Number.isFinite(Date.parse(snapshot.generatedAt)) && snapshot.opportunities?.length && snapshot.sources?.length >= 9) {
       console.log(`Se publica el feed comprobado a las ${snapshot.generatedAt}; la actualización programada sigue activa.`);
       return;
     }
