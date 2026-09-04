@@ -1,7 +1,7 @@
 import { verifiedOpportunities, type Opportunity } from '../opportunities';
+import { classify as classifyTopic, isOpenOpportunity, isTechnologyText } from '../../lib/opportunity-rules.mjs';
 
 const API_ROOT = 'https://api.mercadopublico.cl/APISOCDS/OCDS';
-const MARKETPLACE_HOME = 'https://www.mercadopublico.cl/Home';
 const SCAN_LIMIT = 72;
 const REVALIDATE_SECONDS = 30 * 60;
 
@@ -112,13 +112,7 @@ function isTechnologyTender(release: JsonObject) {
 }
 
 function classify(release: JsonObject) {
-  const text = normalize(`${release?.tender?.title ?? ''} ${release?.tender?.description ?? ''}`);
-  if (/ciber|seguridad inform|firewall|soc\b/.test(text)) return 'Ciberseguridad';
-  if (/licencia|suscripcion|cloud|nube/.test(text)) return 'Licencias y nube';
-  if (/servidor|hardware|redes|datacenter|equipamiento/.test(text)) return 'Infraestructura TI';
-  if (/datos|inteligencia artificial|automatizacion|rpa|api/.test(text)) return 'Datos y automatización';
-  if (/desarrollo|software|plataforma|aplicacion|sistema/.test(text)) return 'Desarrollo de software';
-  return 'Servicios TI';
+  return classifyTopic(release?.tender?.title, release?.tender?.description);
 }
 
 function canonicalRegion(value: unknown) {
@@ -158,8 +152,7 @@ function documentNames(tender: JsonObject) {
   const documents = Array.isArray(tender?.documents) ? tender.documents : [];
   const names = documents
     .map((document: JsonObject) => document?.title || document?.description)
-    .filter((name: unknown): name is string => typeof name === 'string' && name.trim().length > 0)
-    .slice(0, 6);
+    .filter((name: unknown): name is string => typeof name === 'string' && name.trim().length > 0);
   return names.length > 0 ? names : ['Bases administrativas y técnicas', 'Anexos de la licitación'];
 }
 
@@ -167,7 +160,7 @@ function mapTender(payload: JsonObject, sourceUrl: string, now: Date): Opportuni
   const releases = Array.isArray(payload?.releases) ? payload.releases : [];
   const release = releases.at(-1);
   const tender = release?.tender;
-  if (!release || !tender || !isTechnologyTender(release)) return null;
+  if (!release || !tender || !isTechnologyTender(release) || !isTechnologyText(tender.title, tender.description, (tender.items ?? []).map((item: JsonObject)=>item.description).join(' '))) return null;
 
   const deadline = tender?.tenderPeriod?.endDate;
   const statusText = normalize(`${tender?.status ?? ''} ${tender?.statusDetails ?? ''}`);
@@ -198,19 +191,15 @@ function mapTender(payload: JsonObject, sourceUrl: string, now: Date): Opportuni
     currency: tender?.value?.currency === 'USD' ? 'USD' : 'CLP',
     modality: String(tender?.procurementMethodDetails || tender?.procurementMethod || 'Licitación pública'),
     description: String(tender?.description || tender?.title || '').trim(),
-    requirements: [
-      'Revisar las bases administrativas y técnicas publicadas por la entidad.',
-      'Validar que la empresa se encuentre hábil para contratar con el Estado.',
-      'Preparar los antecedentes administrativos, técnicos y económicos solicitados.',
-      'Enviar la oferta dentro del plazo exclusivamente por Mercado Público.',
-    ],
+    requirements: (tender.items ?? []).map((item: JsonObject) => `${item.description || item.classification?.description || 'Ítem'}${item.quantity ? ` · ${item.quantity} ${item.unit?.name || 'unidades'}` : ''}`),
     documents: documentNames(tender),
     contactChannel: `Canal oficial de consultas y ofertas de Mercado Público. Busca el proceso por su ID: ${id}.`,
     contactName: contact?.name ? String(contact.name) : undefined,
     contactEmail: contact?.email ? String(contact.email) : undefined,
     contactPhone: contact?.telephone ? String(contact.telephone) : undefined,
-    sourceUrl,
-    applicationUrl: MARKETPLACE_HOME,
+    sourceUrl: `https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=${encodeURIComponent(id)}`,
+    applicationUrl: `https://www.mercadopublico.cl/fichaLicitacion.html?idLicitacion=${encodeURIComponent(id)}`,
+    checkedAt: now.toISOString(), status: 'open',
     sourceMode: 'live',
   };
 }
@@ -252,7 +241,7 @@ export async function getOpportunities(): Promise<OpportunityFeed> {
     const urls = Array.from(new Set(monthlyUrls.flat()));
     const live = await loadTenderBatch(urls, now);
     const activeVerified = verifiedOpportunities.filter(
-      (item) => new Date(item.deadline).getTime() > now.getTime(),
+      (item) => isOpenOpportunity(item, now),
     );
     const merged = [...live, ...activeVerified].filter(
       (item, index, all) => all.findIndex((candidate) => candidate.id === item.id) === index,
@@ -267,7 +256,7 @@ export async function getOpportunities(): Promise<OpportunityFeed> {
 
   return {
     opportunities: verifiedOpportunities.filter(
-      (item) => new Date(item.deadline).getTime() > now.getTime(),
+      (item) => isOpenOpportunity(item, now),
     ),
     dataMode: 'verified',
     lastUpdated: formatUpdateTime(now),

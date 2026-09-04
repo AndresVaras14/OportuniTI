@@ -5,11 +5,23 @@ export type Opportunity = {
   region: string;
   city: string;
   category: string;
-  publishedAt: string;
-  deadline: string;
+  publishedAt?: string;
+  deadline?: string;
   questionsDeadline?: string;
   budget?: number;
-  currency: 'CLP' | 'USD';
+  currency: string;
+  budgetText?: string;
+  status?: 'open' | 'closed';
+  checkedAt?: string;
+  country?: string;
+  geographicEvidence?: string;
+  detailLevel?: 'expanded' | 'summary';
+  detailNotice?: string;
+  skills?: string[];
+  contacts?: {name?: string; role: string; email?: string; phone?: string}[];
+  facts?: {label: string; value: string}[];
+  milestones?: {label: string; date: string}[];
+  documentLinks?: {title: string; url: string}[];
   modality: string;
   description: string;
   requirements: string[];
@@ -21,7 +33,7 @@ export type Opportunity = {
   sourceUrl: string;
   applicationUrl?: string;
   sourceName?: string;
-  sourceType?: 'public' | 'multilateral' | 'corporate';
+  sourceType?: 'public' | 'multilateral' | 'corporate' | 'marketplace';
   applicationSteps?: string[];
   sourceMode: 'live' | 'verified';
 };
@@ -33,6 +45,7 @@ export type OpportunitySource = {
   status: 'online' | 'empty' | 'portal' | 'error';
   count: number;
   detail: string;
+  checkedAt?: string;
 };
 
 export const southRegions = [

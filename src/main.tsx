@@ -50,10 +50,10 @@ function App() {
         const live = Array.isArray(payload.opportunities) ? payload.opportunities : [];
 
         setFeed({
-          opportunities: live.length > 0 ? live : verifiedOpportunities,
+          opportunities: live,
           sources: Array.isArray(payload.sources) ? payload.sources : monitoredSources,
           lastUpdated: payload.lastUpdated || initialUpdate,
-          dataMode: live.length > 0 ? 'live' : 'verified',
+          dataMode: 'live',
         });
       } catch {
         // The verified data already rendered remains available.

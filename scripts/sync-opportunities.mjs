@@ -1,5 +1,9 @@
 import { writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { createHash } from 'node:crypto';
+import { classify, isTechnologyText, normalize, safeUrl, zonedISO } from '../lib/opportunity-rules.mjs';
+import { htmlText, loadFreelancer, loadUndp } from './sources/additional-sources.mjs';
 
 const OUTPUT = resolve('public/live-opportunities.json');
 const MARKET_HOME = 'https://www.mercadopublico.cl/Home';
@@ -8,27 +12,14 @@ const OCDS_API = 'https://api.mercadopublico.cl/APISOCDS/OCDS';
 const UNGM_SEARCH = 'https://www.ungm.org/Public/Notice/Search';
 const WORLD_BANK_API = 'https://search.worldbank.org/api/v2/procnotices';
 
-const IT_TERMS = [
-  'software', 'informatic', 'tecnologia de la informacion', 'plataforma web', 'portal web', 'sitio web',
-  'sistema de informacion', 'sistema informatico', 'desarrollo de sistema',
-  'licencia', 'suscripcion', 'cloud', 'nube', 'servidor', 'hardware', 'ciberseguridad',
-  'seguridad de la informacion', 'base de datos', 'analitica', 'inteligencia artificial',
-  'automatizacion', 'rpa', 'soporte ti', 'servicios ti', 'redes informaticas', 'red de datos', 'datacenter',
-  'telecomunicaciones', 'conectividad', 'erp', 'crm', 'api', 'computador', 'computacional',
-  'equipos tecnologicos', 'lan', 'wan', 'wifi', 'tic', 'ict', 'it services', 'lms', 'learning management system',
-  'information technology', 'data management', 'web development', 'cybersecurity', 'digital platform',
-];
-
 const SOURCE_DEFINITIONS = [
   ['mercado-publico', 'Mercado Público', MARKET_HOME, 'Licitaciones y compras públicas de Chile.'],
   ['ungm', 'Naciones Unidas · UNGM', 'https://www.ungm.org/Public/Notice', 'Procesos activos que incluyen a Chile.'],
   ['world-bank', 'Banco Mundial', 'https://projects.worldbank.org/en/projects-operations/procurement', 'Oportunidades de proyectos financiados en Chile.'],
   ['codelco', 'Codelco', 'https://www.codelco.com/licitaciones-en-proceso', 'Licitaciones corporativas publicadas en proceso.'],
+  ['freelancer', 'Freelancer · Chile', 'https://www.freelancer.com/jobs/?countries=cl', 'Proyectos abiertos del filtro de país Chile de Freelancer. No empleos permanentes.'],
+  ['undp', 'PNUD · Chile', 'https://procurement-notices.undp.org/', 'Avisos públicos de contratación de la oficina PNUD Chile; se revisa el detalle antes de admitirlos.'],
 ];
-
-function normalize(value) {
-  return String(value ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-}
 
 function decodeHtml(value) {
   return String(value ?? '')
@@ -50,24 +41,6 @@ function decodeHtml(value) {
     .trim();
 }
 
-function isTechnologyText(...values) {
-  const text = ` ${normalize(values.join(' '))} `;
-  return IT_TERMS.some((term) => {
-    if (term.length <= 3) return new RegExp(`\\b${term}\\b`).test(text);
-    return text.includes(term);
-  });
-}
-
-function classify(textValue) {
-  const text = normalize(textValue);
-  if (/ciber|seguridad inform|firewall|soc\b/.test(text)) return 'Ciberseguridad';
-  if (/\blms\b|learning management|moodle/.test(text)) return 'Desarrollo de software';
-  if (/licencia|suscripcion|cloud|nube|saas/.test(text)) return 'Licencias y nube';
-  if (/servidor|hardware|redes|datacenter|conectividad|telecom/.test(text)) return 'Infraestructura TI';
-  if (/datos|analitica|inteligencia artificial|automatizacion|rpa|api/.test(text)) return 'Datos y automatización';
-  if (/desarrollo|software|plataforma|aplicacion|sistema|portal|web/.test(text)) return 'Desarrollo de software';
-  return 'Servicios TI';
-}
 
 function canonicalRegion(value) {
   const region = normalize(value);
@@ -106,10 +79,15 @@ async function fetchText(url, options) {
 
 async function inBatches(values, size, worker) {
   const results = [];
+  let failed = 0;
   for (let index = 0; index < values.length; index += size) {
     const batch = await Promise.allSettled(values.slice(index, index + size).map(worker));
-    for (const result of batch) if (result.status === 'fulfilled' && result.value) results.push(result.value);
+    for (const result of batch) {
+      if (result.status === 'rejected') failed += 1;
+      else if (result.value) results.push(result.value);
+    }
   }
+  if (values.length && failed === values.length) throw new Error('No se pudo consultar ninguna ficha de esta fuente');
   return results;
 }
 
@@ -131,16 +109,15 @@ function marketSteps(id) {
   ];
 }
 
-function mapMarketApiTender(row, now) {
+export function mapMarketApiTender(row, now) {
   const id = String(row?.CodigoExterno ?? row?.codigoExterno ?? '').trim();
   const title = String(row?.Nombre ?? row?.nombre ?? '').trim();
-  const deadline = row?.FechaCierre ?? row?.Fechas?.FechaCierre;
+  const deadline = zonedISO(row?.FechaCierre ?? row?.Fechas?.FechaCierre);
   const items = row?.Items?.Listado ?? [];
   const itemText = items.map((item) => `${item?.NombreProducto ?? ''} ${item?.Descripcion ?? ''}`).join(' ');
   const excluded = /(coffee break|licencia de conducir|reactiv|insumos.*laborator|hematolog|bioquim|cirugia robot|tecnologo medic|gira tecnolog|festival.*ciencia|conservacion.*redes? (?:de )?(?:agua|gases))/;
-  if (!id || !title || excluded.test(normalize(title)) || !future(deadline, now) || !isTechnologyText(title, row?.Descripcion, itemText)) return null;
+  if (!id || !title || excluded.test(normalize(title)) || (row?.CodigoEstado && Number(row.CodigoEstado) !== 5) || !future(deadline, now) || !isTechnologyText(title, row?.Descripcion, itemText)) return null;
   const buyer = row?.Comprador ?? {};
-  const text = `${title} ${row?.Descripcion ?? ''} ${itemText}`;
   const itemSummaries = items
     .map((item) => {
       const name = String(item?.NombreProducto || item?.Categoria || 'Ítem solicitado').trim();
@@ -150,8 +127,7 @@ function mapMarketApiTender(row, now) {
         : '';
       return `${name}${description && normalize(description) !== normalize(name) ? `: ${description}` : ''}${quantity}`;
     })
-    .filter(Boolean)
-    .slice(0, 5);
+    .filter(Boolean);
   const contactName = String(buyer?.NombreContacto || buyer?.NombreUsuario || '').trim();
   const contactRole = String(buyer?.CargoContacto || buyer?.CargoUsuario || '').trim();
   return {
@@ -159,16 +135,34 @@ function mapMarketApiTender(row, now) {
     buyer: String(buyer?.NombreOrganismo ?? buyer?.NombreUnidad ?? 'Entidad pública'),
     region: canonicalRegion(buyer?.RegionUnidad),
     city: String(buyer?.ComunaUnidad || buyer?.CiudadUnidad || buyer?.RegionUnidad || 'Chile').trim(),
-    category: classify(text),
-    publishedAt: String(row?.Fechas?.FechaPublicacion ?? row?.FechaPublicacion ?? now.toISOString()),
-    deadline: String(deadline), questionsDeadline: row?.Fechas?.FechaFinal ?? row?.Fechas?.FechaCierrePreguntas,
+    // Product taxonomy such as 'Software de desarrollo' describes the product,
+    // not the requested service. Do not use product labels as development evidence.
+    category: classify(title, `${row?.Descripcion ?? ''} ${items.map(item=>item.Descripcion || '').join(' ')}`),
+    publishedAt: zonedISO(row?.Fechas?.FechaPublicacion ?? row?.FechaPublicacion),
+    deadline, questionsDeadline: zonedISO(row?.Fechas?.FechaFinal ?? row?.Fechas?.FechaCierrePreguntas),
     budget: Number(row?.MontoEstimado) > 0 ? Number(row.MontoEstimado) : undefined,
-    currency: row?.Moneda === 'USD' ? 'USD' : 'CLP',
+    currency: row?.Moneda || 'CLP',
     modality: String(row?.Tipo ?? row?.TipoConvocatoria ?? 'Licitación pública'),
     description: String(row?.Descripcion || title),
-    requirements: itemSummaries.length
-      ? itemSummaries
-      : ['Revisar las bases administrativas y técnicas.', 'Verificar habilidad para contratar con el Estado.', 'Presentar todos los anexos exigidos.', 'Confirmar fechas y cambios en la ficha oficial.'],
+    requirements: itemSummaries,
+    detailLevel: items.length || row?.Descripcion ? 'expanded' : 'summary',
+    detailNotice: 'Se muestran todos los ítems y campos públicos recibidos. Las bases, anexos y criterios de evaluación no incluidos por la API deben consultarse en la ficha oficial.',
+    checkedAt: now.toISOString(), status: 'open',
+    contacts: [
+      { name: contactName, role: contactRole || 'Comprador', email: buyer?.CorreoContacto, phone: buyer?.FonoContacto },
+      { name: row?.NombreResponsableContrato, role: 'Responsable del contrato', email: row?.EmailResponsableContrato, phone: row?.FonoResponsableContrato },
+      { name: row?.NombreResponsablePago, role: 'Responsable del pago', email: row?.EmailResponsablePago },
+    ].filter((contact) => contact.name || contact.email || contact.phone),
+    facts: [
+      ['Dirección de entrega', row?.DireccionEntrega], ['Dirección de visita', row?.DireccionVisita],
+      ['Fuente de financiamiento', row?.FuenteFinanciamiento], ['Observaciones del contrato', row?.ObservacionContract],
+      ['Justificación del presupuesto', row?.JustificacionMontoEstimado],
+    ].filter(([,value]) => value && String(value).trim()).map(([label,value]) => ({label,value:String(value)})),
+    milestones: [
+      ['Respuestas a consultas', row?.Fechas?.FechaPubRespuestas], ['Apertura técnica', row?.Fechas?.FechaActoAperturaTecnica],
+      ['Apertura económica', row?.Fechas?.FechaActoAperturaEconomica], ['Adjudicación estimada', row?.Fechas?.FechaEstimadaAdjudicacion],
+      ['Visita a terreno', row?.Fechas?.FechaVisitaTerreno], ['Entrega de antecedentes', row?.Fechas?.FechaEntregaAntecedentes],
+    ].map(([label,date])=>({label,date:zonedISO(date)})).filter((entry)=>entry.date),
     documents: [
       'Bases administrativas y técnicas publicadas en la ficha',
       'Anexos, aclaraciones y respuestas del proceso',
@@ -205,19 +199,22 @@ function mapOcds(payload, sourceUrl, now) {
   const address = party?.address ?? {};
   const id = String(tender?.id || release?.id || payload?.ocid || '').trim();
   if (!id) return null;
-  const documents = (tender?.documents ?? []).map((doc) => doc?.title || doc?.description).filter(Boolean).slice(0, 6);
+  const documents = (tender?.documents ?? []).map((doc) => doc?.title || doc?.description).filter(Boolean);
   return {
     id, title: String(tender?.title || 'Proyecto tecnológico'),
     buyer: String(tender?.procuringEntity?.name || party?.name || release?.buyer?.name || 'Entidad pública'),
     region: canonicalRegion(address?.region), city: String(address?.locality || address?.streetAddress || address?.region || 'Chile'),
-    category: classify(`${tender?.title} ${tender?.description} ${itemText}`),
+    category: classify(tender?.title, `${tender?.description} ${items.map(item=>item.description || '').join(' ')}`),
     publishedAt: String(release?.date || tender?.tenderPeriod?.startDate || now.toISOString()), deadline: String(deadline),
     questionsDeadline: tender?.enquiryPeriod?.endDate,
     budget: Number(tender?.value?.amount) > 0 ? Number(tender.value.amount) : undefined,
     currency: tender?.value?.currency === 'USD' ? 'USD' : 'CLP',
     modality: String(tender?.procurementMethodDetails || tender?.procurementMethod || 'Licitación pública'),
     description: String(tender?.description || tender?.title || ''),
-    requirements: ['Revisar las bases administrativas y técnicas.', 'Verificar habilidad para contratar con el Estado.', 'Preparar la oferta técnica y económica.', 'Confirmar el calendario en Mercado Público.'],
+    requirements: items.map(item => `${item.description || item.classification?.description || 'Ítem'}${item.quantity ? ` · ${item.quantity} ${item.unit?.name || 'unidades'}` : ''}`),
+    documentLinks: (tender?.documents ?? []).map(doc=>({title:doc.title || doc.description || 'Documento oficial',url:safeUrl(doc.url)})).filter(doc=>doc.url),
+    checkedAt: now.toISOString(), status: 'open', detailLevel: 'expanded',
+    detailNotice: 'Detalle público OCDS; las bases pueden contener requisitos adicionales.',
     documents: documents.length ? documents : ['Bases administrativas y técnicas', 'Anexos de la licitación'],
     contactChannel: `Canal oficial de Mercado Público. Busca el proceso por el ID ${id}.`,
     contactName: contact?.name, contactEmail: contact?.email, contactPhone: contact?.telephone,
@@ -228,9 +225,15 @@ function mapOcds(payload, sourceUrl, now) {
 }
 
 async function loadMarketApi(ticket, now) {
-  const list = await fetchJson(`${MARKET_API}?estado=activas&ticket=${encodeURIComponent(ticket)}`);
+  let list;
+  for (let attempt=0;attempt<4;attempt++) {
+    try { list=await fetchJson(`${MARKET_API}?estado=activas&ticket=${encodeURIComponent(ticket)}`); break; }
+    catch(error) { if(error.status!==429 || attempt===3) throw error; await sleep(5000*(attempt+1)); }
+  }
+  if (!Array.isArray(list?.Listado)) throw new Error('Listado de Mercado Público no reconocido');
   const rows = Array.isArray(list?.Listado) ? list.Listado : [];
-  const candidates = rows.filter((row) => isTechnologyText(row?.Nombre, row?.Descripcion)).slice(0, 80);
+  const candidates = rows.filter((row) => isTechnologyText(row?.Nombre, row?.Descripcion));
+  console.log(`Mercado Público: ${candidates.length} candidatos TI; sin el límite anterior de 80.`);
   const opportunities = [];
   for (let index = 0; index < candidates.length; index += 1) {
     const row = candidates[index];
@@ -283,14 +286,16 @@ async function loadMarketOcds(now) {
 }
 
 async function loadMercadoPublico(now) {
-  const tickets = [process.env.CHILECOMPRA_TICKET, 'F8537A18-6766-4DEF-9E59-426B4FEE2844'].filter(Boolean);
+  const tickets = [...new Set([process.env.CHILECOMPRA_TICKET, 'F8537A18-6766-4DEF-9E59-426B4FEE2844'].filter(Boolean))];
   for (const ticket of tickets) {
     try {
       const opportunities = await loadMarketApi(ticket, now);
       if (opportunities.length) return opportunities;
     } catch (error) { console.warn(`Mercado Público REST no disponible: ${error.message}`); }
   }
-  return loadMarketOcds(now);
+  const fallback = await loadMarketOcds(now);
+  if (!fallback.length) throw new Error('No se pudo confirmar el listado activo; REST limitado y respaldo sin resultados vigentes');
+  return fallback;
 }
 
 const MONTHS = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11 };
@@ -323,8 +328,8 @@ function ungmDescription(detail, title) {
   const stops = ['Documents Contacts', 'Documents  Contacts', 'Countries or territories', 'UNSPSC codes']
     .map((marker) => remainder.indexOf(marker))
     .filter((index) => index > 0);
-  const end = stops.length ? Math.min(...stops) : 1200;
-  return remainder.slice(0, Math.min(end, 1200)).trim() || title;
+  const end = stops.length ? Math.min(...stops) : remainder.length;
+  return remainder.slice(0, end).trim() || title;
 }
 
 async function loadUngm(now) {
@@ -348,8 +353,11 @@ async function loadUngm(now) {
   }
   return inBatches(notices, 10, async ({ id, title, deadline, block }) => {
     const url = `https://www.ungm.org/Public/Notice/${id}`;
-    const detail = decodeHtml(await fetchText(url));
-    if (!isTechnologyText(title)) return null;
+    const detailHtml = await fetchText(url);
+    const detail = decodeHtml(detailHtml);
+    const descriptionHtml = detailHtml.split(/<div class="title">Description<\/div>/i)[1]?.split(/<div class="accessibilityTabs">/i)[0];
+    const description = descriptionHtml ? htmlText(descriptionHtml) : ungmDescription(detail, title);
+    if (!isTechnologyText(title, description)) return null;
     if (/(el salvador|gaza|gambia|haiti|central african republic|\bdrc\b|sub-sahara)/i.test(decodeHtml(title))) return null;
     const email = detail.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i)?.[0];
     const agency = ungmCell(block, 'resultAgency') || 'Naciones Unidas';
@@ -357,8 +365,12 @@ async function loadUngm(now) {
     const publishedAt = parsePublishedDate(detail.match(/Published on:\s*(\d{1,2}-[A-Za-z]{3}-\d{4})/i)?.[1]) || now.toISOString();
     return {
       id: reference, title, buyer: agency, region: 'Cobertura nacional', city: 'Chile',
-      category: classify(`${title} ${detail}`), publishedAt, deadline, currency: 'USD',
-      modality: 'Aviso de contratación internacional', description: ungmDescription(detail, title),
+      category: classify(title, description), publishedAt, deadline, currency: 'USD',
+      checkedAt: now.toISOString(), status: 'open', detailLevel: description === title ? 'summary' : 'expanded',
+      detailNotice: 'Texto público del aviso. Algunos anexos requieren iniciar sesión en el portal de la agencia.',
+      modality: 'Aviso de contratación internacional', description,
+      documentLinks: [...detailHtml.matchAll(/<a[^>]*href="([^"]*DownloadDocument\?[^"]+)"[^>]*>([\s\S]*?)<\/a>/gi)]
+        .map(match => ({ title: decodeHtml(match[2]), url: safeUrl(match[1].replace(/&amp;/g, '&'), url) })).filter(link=>link.url),
       requirements: ['Revisar elegibilidad y alcance en el aviso oficial.', 'Descargar los documentos indicados por la agencia.', 'Preparar la propuesta en el idioma y formato exigidos.', 'Enviar por el canal oficial antes del cierre.'],
       documents: ['Aviso oficial UNGM', 'Documentos de solicitud indicados por la agencia'],
       contactChannel: email ? `Contacto publicado por la agencia: ${email}` : 'Consulta el aviso UNGM para ver el contacto y canal de envío vigentes.',
@@ -369,17 +381,17 @@ async function loadUngm(now) {
 }
 
 async function loadWorldBank(now) {
-  const date = now.toISOString().slice(0, 10);
-  const payload = await fetchJson(`${WORLD_BANK_API}?format=json&project_ctry_name_exact=Chile&deadline_strdate=${date}&rows=100`);
+  const payload = await fetchJson(`${WORLD_BANK_API}?format=json&project_ctry_name_exact=Chile&rows=100&srt=notice_date&order=desc`);
   const documents = Object.values(payload?.procurement_notices ?? payload?.documents ?? {});
   return documents.filter((row) => future(row?.submission_deadline_date, now) && isTechnologyText(row?.bid_description, row?.project_name, row?.notice_text)).map((row) => {
     const id = String(row?.bid_reference_no || row?.id || row?.project_id);
-    const sourceUrl = row?.contact_web_url || `https://projects.worldbank.org/en/projects-operations/procurement-detail/${encodeURIComponent(row?.id || '')}`;
+    const sourceUrl = `https://projects.worldbank.org/en/projects-operations/procurement-detail/${encodeURIComponent(row?.id || '')}`;
     return {
       id, title: String(row?.bid_description || row?.project_name || 'Proyecto tecnológico'), buyer: String(row?.contact_organization || row?.project_name || 'Banco Mundial'),
-      region: 'Cobertura nacional', city: String(row?.contact_ctry_name || 'Chile'), category: classify(`${row?.bid_description} ${row?.notice_text}`),
+      region: 'Cobertura nacional', city: String(row?.contact_ctry_name || 'Chile'), category: classify(row?.bid_description, row?.notice_text),
       publishedAt: String(row?.noticedate || now.toISOString()), deadline: String(row.submission_deadline_date), currency: 'USD',
-      modality: String(row?.procurement_method_name || row?.notice_type || 'Procurement notice'), description: decodeHtml(row?.notice_text || row?.bid_description).slice(0, 1200),
+      modality: String(row?.procurement_method_name || row?.notice_type || 'Procurement notice'), description: decodeHtml(row?.notice_text || row?.bid_description),
+      checkedAt: now.toISOString(), status: 'open', detailLevel: 'expanded',
       requirements: ['Revisar elegibilidad y método de selección.', 'Consultar el aviso y documentos oficiales.', 'Preparar expresiones de interés u oferta solicitada.', 'Enviar por el canal indicado antes del cierre.'],
       documents: ['Aviso de contratación', 'Documentos indicados en la ficha'], contactChannel: String(row?.contact_address || row?.contact_email || 'Contacto publicado en la ficha oficial.'),
       contactName: row?.contact_name, contactEmail: row?.contact_email, contactPhone: row?.contact_phone_no,
@@ -390,28 +402,37 @@ async function loadWorldBank(now) {
 }
 
 function parseChileDate(text, now) {
-  const matches = [...String(text).matchAll(/(\d{1,2})[/-](\d{1,2})[/-](\d{4})(?:\s+(\d{1,2}):(\d{2}))?/g)];
-  const dates = matches.map((match) => new Date(Number(match[3]), Number(match[2]) - 1, Number(match[1]), Number(match[4] || 23), Number(match[5] || 59))).filter((date) => date > now);
-  return dates.sort((a, b) => a - b)[0]?.toISOString() ?? null;
+  const match = String(text).match(/(\d{1,2})[/-](\d{1,2})[/-](\d{4})(?:\s+(?:hasta las\s+)?(\d{1,2}):(\d{2}))?/);
+  if (!match) return null;
+  const date=zonedISO(`${match[3]}-${match[2].padStart(2,'0')}-${match[1].padStart(2,'0')}T${(match[4]||'00').padStart(2,'0')}:${match[5]||'00'}:00`);
+  return future(date, now) ? date : null;
 }
 
-async function loadCodelco(now) {
-  const sourceUrl = 'https://www.codelco.com/licitaciones-en-proceso';
-  const html = await fetchText(sourceUrl);
-  const rows = [...html.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)].map((match) => decodeHtml(match[1]));
-  return rows.filter((row) => isTechnologyText(row.replace(/plataforma\s+ariba/gi, ''))).map((row, index) => {
-    const deadline = parseChileDate(row, now);
+export function mapCodelcoRow(row, now) {
+    const listingUrl = 'https://www.codelco.com/licitaciones-en-proceso';
+    const cells = [...row.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map(match=>match[1]);
+    if(cells.length<7) return null;
+    const title=htmlText(cells[2]);
+    if(!isTechnologyText(title)) return null;
+    const deadline = parseChileDate(htmlText(cells[6]), now);
     if (!deadline) return null;
-    const title = row.replace(/^\s*[\d/:-]+\s*/, '').slice(0, 220);
+    const documents=[...cells[2].matchAll(/href="([^"]+)"/gi)].map(match=>({title:'Llamado y antecedentes del proceso',url:safeUrl(match[1],listingUrl)})).filter(link=>link.url);
+    const sourceUrl=documents[0]?.url || listingUrl;
     return {
-      id: `CODELCO-${now.getFullYear()}-${index + 1}`, title, buyer: 'Codelco', region: 'Cobertura nacional', city: 'Chile',
-      category: classify(row), publishedAt: now.toISOString(), deadline, currency: 'CLP', modality: 'Licitación corporativa',
-      description: row, requirements: ['Revisar las bases publicadas por Codelco.', 'Validar requisitos de proveedor y seguridad.', 'Preparar antecedentes técnicos y comerciales.', 'Postular por el canal señalado en la licitación.'],
-      documents: ['Bases de licitación', 'Anexos técnicos y comerciales'], contactChannel: 'La ficha oficial indica el contacto o acceso a SAP Ariba.',
+      id: `CODELCO-${createHash('sha256').update(sourceUrl+title).digest('hex').slice(0,12)}`, title, buyer: 'Codelco', region: 'Cobertura nacional', city: htmlText(cells[3]) || 'Chile',
+      category: classify(title), publishedAt:parseChileDate(htmlText(cells[0]), new Date(0)) || undefined, deadline, currency: 'CLP', modality: 'Licitación corporativa',
+      description: `${title}\n\nOperación: ${htmlText(cells[3])}\nBases disponibles: ${htmlText(cells[4])}\nValor de bases (no es presupuesto): ${htmlText(cells[5])}\nFecha de entrega y canal: ${htmlText(cells[6])}`,
+      requirements: [],documents: [],documentLinks:documents, contactChannel: htmlText(cells[6]),
+      checkedAt:now.toISOString(),status:'open',detailLevel:'summary',detailNotice:'Datos de la tabla pública. El alcance completo está en el documento enlazado; no se ha extraído su contenido. Si sólo se publica el día de cierre, se oculta desde el inicio de ese día por precaución.',
       sourceUrl, applicationUrl: sourceUrl, sourceName: 'Codelco', sourceType: 'corporate',
       applicationSteps: ['Abre la licitación en proceso.', 'Descarga bases y anexos.', 'Verifica el canal indicado o SAP Ariba.', 'Envía tu propuesta antes del cierre.'], sourceMode: 'live',
     };
-  }).filter(Boolean);
+}
+
+async function loadCodelco(now) {
+  const html = await fetchText('https://www.codelco.com/licitaciones-en-proceso');
+  if(!html.includes('Fecha de entrega')) throw new Error('Listado Codelco no reconocido');
+  return [...html.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)].map(match=>mapCodelcoRow(match[1],now)).filter(Boolean);
 }
 
 async function collectSource(definition, loader, now) {
@@ -425,20 +446,29 @@ async function collectSource(definition, loader, now) {
   }
 }
 
+export async function syncOpportunities() {
 const now = new Date();
-const loaders = [loadMercadoPublico, loadUngm, loadWorldBank, loadCodelco];
+const loaders = [loadMercadoPublico, loadUngm, loadWorldBank, loadCodelco,
+  (date)=>loadFreelancer(date,{fetchJson}), (date)=>loadUndp(date,{fetchText})];
 const collected = await Promise.all(SOURCE_DEFINITIONS.map((definition, index) => collectSource(definition, loaders[index], now)));
+if (collected.every(entry => entry.source.status === 'error')) throw new Error('Ninguna fuente disponible. Se conserva el archivo anterior.');
 const opportunities = collected.flatMap((entry) => entry.opportunities)
   .filter((item, index, all) => all.findIndex((candidate) => `${candidate.sourceName}:${candidate.id}` === `${item.sourceName}:${item.id}`) === index)
-  .sort((a, b) => new Date(a.deadline) - new Date(b.deadline));
+  // Same PNUD negotiation may also be present on UNGM. Prefer its richer direct notice.
+  .filter((item, index, all) => !all.some((candidate, other) => other > index && candidate.id.replace(/,\d+$/, '') === item.id.replace(/,\d+$/, '')))
+  .sort((a, b) => (Date.parse(a.deadline)||Infinity) - (Date.parse(b.deadline)||Infinity));
 
 const sources = [
-  ...collected.map((entry) => entry.source),
+  ...collected.map((entry) => ({...entry.source, checkedAt:now.toISOString(),count:opportunities.filter(item=>item.sourceName===entry.source.name).length})),
   { id: 'bid', name: 'BID', url: 'https://www.iadb.org/es/como-podemos-trabajar-juntos/adquisiciones/adquisiciones-para-proyectos/avisos-de-adquisiciones', status: 'portal', count: 0, detail: 'Portal oficial de adquisiciones financiadas por el BID.' },
   { id: 'enap', name: 'ENAP', url: 'https://www.enap.cl/gestion-proveedores-enap', status: 'portal', count: 0, detail: 'Acceso al portal oficial de licitaciones activas de ENAP.' },
+  { id: 'workana', name: 'Workana · Chile', url: 'https://www.workana.com/jobs?country=CL&category=it-programming', status: 'portal', count: 0, detail: 'Proyectos freelance de Chile. Bloquea el acceso automático; no se cuentan resultados de este portal.' },
 ];
 
 const lastUpdated = new Intl.DateTimeFormat('es-CL', { dateStyle: 'long', timeStyle: 'short', timeZone: 'America/Santiago' }).format(now);
 await writeFile(OUTPUT, `${JSON.stringify({ opportunities, sources, lastUpdated, generatedAt: now.toISOString() }, null, 2)}\n`, 'utf8');
 console.log(`OportuniTI: ${opportunities.length} oportunidades vigentes.`);
 for (const source of sources) console.log(`- ${source.name}: ${source.count} (${source.status})`);
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) await syncOpportunities();

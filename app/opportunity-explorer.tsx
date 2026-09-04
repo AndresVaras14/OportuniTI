@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState, type ComponentType, type ReactNode } from 'react';
+import { useEffect, useMemo, useState, type ComponentType, type ReactNode } from 'react';
 import {
   ArrowUpRight,
   Binary,
@@ -34,6 +34,7 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { southRegions, type Opportunity, type OpportunitySource } from './opportunities';
+import { categories as topicCategories, classify, isOpenOpportunity, normalize, safeUrl } from '../lib/opportunity-rules.mjs';
 
 type ExplorerProps = {
   opportunities: Opportunity[];
@@ -42,27 +43,31 @@ type ExplorerProps = {
   dataMode: 'live' | 'verified';
 };
 
-const TODAY = new Date();
 const dateFormat = new Intl.DateTimeFormat('es-CL', {
   day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit',
+  timeZone: 'America/Santiago',
 });
 
-function remainingDays(deadline: string) {
-  return Math.max(0, Math.ceil((new Date(deadline).getTime() - TODAY.getTime()) / 86_400_000));
+function remainingDays(deadline?: string) {
+  if (!deadline) return Infinity;
+  return Math.max(0, Math.ceil((new Date(deadline).getTime() - Date.now()) / 86_400_000));
 }
 
-function deadlineLabel(deadline: string) {
+function deadlineLabel(deadline?: string) {
+  if (!deadline) return 'Abierto · sin cierre publicado';
   const days = remainingDays(deadline);
   if (days === 0) return 'Cierra hoy';
   if (days === 1) return 'Cierra mañana';
   return `Quedan ${days} días`;
 }
 
-function compactDate(value: string) {
+function compactDate(value?: string) {
+  if (!value || !Number.isFinite(Date.parse(value))) return 'No publicado';
   return dateFormat.format(new Date(value)).replace('.', '');
 }
 
 function money(item: Opportunity) {
+  if (item.budgetText) return item.budgetText;
   if (!item.budget) return 'Revisar bases';
   return new Intl.NumberFormat('es-CL', {
     style: 'currency', currency: item.currency, maximumFractionDigits: 0,
@@ -76,7 +81,10 @@ function sourceStatus(source: OpportunitySource) {
   return 'Reintento próximo';
 }
 
-export function OpportunityExplorer({ opportunities, sources, lastUpdated, dataMode }: ExplorerProps) {
+export function OpportunityExplorer({ opportunities: rawOpportunities, sources, lastUpdated, dataMode }: ExplorerProps) {
+  const [now, setNow] = useState(() => new Date());
+  useEffect(() => { const timer = setInterval(() => setNow(new Date()), 60_000); return () => clearInterval(timer); }, []);
+  const opportunities = useMemo(() => rawOpportunities.map(item => ({...item, category: item.checkedAt ? item.category : classify(item.title, item.description)})).filter(item => isOpenOpportunity(item, now)), [rawOpportunities, now]);
   const [query, setQuery] = useState('');
   const [zone, setZone] = useState('all');
   const [category, setCategory] = useState('all');
@@ -84,23 +92,22 @@ export function OpportunityExplorer({ opportunities, sources, lastUpdated, dataM
   const [closing, setClosing] = useState('all');
   const [selected, setSelected] = useState<Opportunity | null>(null);
 
-  const categories = useMemo(() => Array.from(new Set(opportunities.map((item) => item.category))).sort(), [opportunities]);
+  const categories = topicCategories;
   const regions = useMemo(() => Array.from(new Set(opportunities.map((item) => item.region))).sort(), [opportunities]);
   const activeSourceNames = useMemo(() => Array.from(new Set(opportunities.map((item) => item.sourceName || 'Mercado Público'))).sort(), [opportunities]);
 
   const results = useMemo(() => {
-    const normalizedQuery = query.trim().toLocaleLowerCase('es-CL');
+    const normalizedQuery = normalize(query.trim());
     return opportunities.filter((item) => {
       const sourceName = item.sourceName || 'Mercado Público';
-      const text = `${item.title} ${item.buyer} ${item.city} ${item.region} ${item.id} ${sourceName}`.toLocaleLowerCase('es-CL');
+      const text = normalize(`${item.title} ${item.description} ${item.requirements.join(' ')} ${item.skills?.join(' ') || ''} ${item.category} ${item.buyer} ${item.city} ${item.region} ${item.id} ${sourceName}`);
       const days = remainingDays(item.deadline);
       return (!normalizedQuery || text.includes(normalizedQuery))
         && (zone === 'all' || (zone === 'sur' ? southRegions.includes(item.region) : item.region === zone))
         && (category === 'all' || item.category === category)
         && (source === 'all' || sourceName === source)
-        && (closing === 'all' || days <= Number(closing))
-        && new Date(item.deadline).getTime() > TODAY.getTime();
-    }).sort((a, b) => new Date(a.deadline).getTime() - new Date(b.deadline).getTime());
+        && (closing === 'all' || (closing === 'undated' ? !item.deadline : days <= Number(closing)));
+    }).sort((a, b) => (Date.parse(a.deadline || '') || Infinity) - (Date.parse(b.deadline || '') || Infinity));
   }, [category, closing, opportunities, query, source, zone]);
 
   return (
@@ -125,7 +132,7 @@ export function OpportunityExplorer({ opportunities, sources, lastUpdated, dataM
               <span className="absolute inline-flex size-full animate-ping rounded-full bg-cyan-300 opacity-50" />
               <span className="relative inline-flex size-2 rounded-full bg-cyan-300" />
             </span>
-            <span className="hidden sm:inline">Fuentes oficiales activas</span><span className="sm:hidden">En línea</span>
+            <span className="hidden sm:inline">Proyectos y licitaciones en Chile</span><span className="sm:hidden">Chile</span>
           </div>
         </div>
       </header>
@@ -165,6 +172,7 @@ export function OpportunityExplorer({ opportunities, sources, lastUpdated, dataM
                 <ExternalLink className="size-3.5 text-slate-500 transition group-hover:text-cyan-300" />
               </div>
               <p className={`mt-2 text-xs font-semibold ${item.status === 'error' ? 'text-rose-300' : item.status === 'portal' ? 'text-violet-300' : 'text-cyan-300'}`}>{sourceStatus(item)}</p>
+              <p className="mt-2 text-xs leading-relaxed text-slate-400">{item.detail}</p>
             </a>
           ))}
         </div>
@@ -191,11 +199,12 @@ export function OpportunityExplorer({ opportunities, sources, lastUpdated, dataM
               {activeSourceNames.map((item) => <option key={item} value={item}>{item}</option>)}
             </Filter>
             <Filter label="Plazo de cierre" value={closing} onChange={setClosing}>
-              <option value="all">Cualquier cierre</option><option value="3">Próximos 3 días</option><option value="7">Próximos 7 días</option><option value="14">Próximos 14 días</option><option value="30">Próximos 30 días</option>
+              <option value="all">Cualquier cierre</option><option value="3">Próximos 3 días</option><option value="7">Próximos 7 días</option><option value="14">Próximos 14 días</option><option value="30">Próximos 30 días</option><option value="undated">Sin cierre publicado</option>
             </Filter>
           </div>
         </div>
 
+        <p className="mt-3 text-sm text-slate-400">Desarrollo a medida, instalación, licencias y soporte se muestran como servicios distintos. Los proyectos sin fecha de cierre requieren una comprobación de apertura en las últimas 24 horas.</p>
         <div className="mb-6 mt-9 flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[.2em] text-cyan-300/60">Oportunidades abiertas</p>
@@ -219,6 +228,7 @@ export function OpportunityExplorer({ opportunities, sources, lastUpdated, dataM
                     <div className="mb-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[.12em] text-sky-200/45"><Globe2 className="size-3.5 text-cyan-300/70" /> {item.sourceName || 'Mercado Público'} · {item.id}</div>
                     <h3 className="text-[22px] font-extrabold leading-[1.1] tracking-[-.04em] text-white">{item.title}</h3>
                     <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-slate-400">{item.description}</p>
+                    <p className="mt-3 text-xs font-semibold text-sky-200/70">{item.detailLevel === 'expanded' ? 'Detalle ampliado disponible' : 'Información parcial de la fuente'}</p>
                   </div>
                   <div className="relative mt-auto border-t border-sky-300/10 pt-5">
                     <p className="flex items-start gap-2 text-sm font-semibold text-slate-200"><Building2 className="mt-0.5 size-4 shrink-0 text-cyan-300" /><span className="line-clamp-1">{item.buyer}</span></p>
@@ -265,11 +275,22 @@ function OpportunityDialog({ selected, onClose }: { selected: Opportunity | null
       </div>
       <div className="space-y-8 px-6 py-7 sm:px-9 sm:py-9">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3"><InfoTile icon={Building2} label="Entidad" value={selected.buyer} /><InfoTile icon={MapPin} label="Ubicación" value={`${selected.city}, ${selected.region}`} /><InfoTile icon={CalendarDays} label="Publicada" value={compactDate(selected.publishedAt)} /><InfoTile icon={Clock3} label="Cierre" value={compactDate(selected.deadline)} /><InfoTile icon={Search} label="Preguntas hasta" value={selected.questionsDeadline ? compactDate(selected.questionsDeadline) : 'Revisar calendario oficial'} /><InfoTile icon={CircleDollarSign} label="Presupuesto" value={money(selected)} /></div>
-        <section className="rounded-2xl border border-cyan-300/12 bg-cyan-400/[.04] p-5 sm:p-6"><SectionTitle>Resumen del proyecto</SectionTitle><p className="mt-3 whitespace-pre-line text-sm leading-7 text-slate-300">{selected.description}</p></section>
+        <div className="rounded-2xl border border-violet-300/20 bg-violet-400/5 p-4 text-sm leading-relaxed text-slate-300">
+          <p>{selected.detailNotice || 'Información pública disponible. Las bases pueden incluir condiciones adicionales.'}</p>
+          <p className="mt-2 text-cyan-200">Última consulta a la fuente: {compactDate(selected.checkedAt)} · Horarios mostrados en Chile continental.</p>
+          {selected.geographicEvidence ? <p className="mt-2 text-slate-400">{selected.geographicEvidence}</p> : null}
+        </div>
+        <section className="rounded-2xl border border-cyan-300/12 bg-cyan-400/[.04] p-5 sm:p-6"><SectionTitle>Descripción del encargo</SectionTitle><p className="mt-3 whitespace-pre-line break-words text-base leading-7 text-slate-300">{selected.description}</p></section>
+        {selected.skills?.length ? <section><SectionTitle>Habilidades solicitadas</SectionTitle><div className="mt-3 flex flex-wrap gap-2">{selected.skills.map(skill => <span key={skill} className="rounded-full border border-sky-300/20 px-3 py-1 text-sm text-sky-200">{skill}</span>)}</div></section> : null}
+        {selected.facts?.length ? <section><SectionTitle>Condiciones publicadas</SectionTitle><dl className="mt-4 grid gap-4 sm:grid-cols-2">{selected.facts.map((fact,index) => <div key={`${fact.label}-${index}`} className="rounded-xl bg-sky-400/5 p-4"><dt className="text-sm font-semibold text-cyan-200">{fact.label}</dt><dd className="mt-2 whitespace-pre-line break-words text-sm leading-relaxed text-slate-300">{fact.value}</dd></div>)}</dl></section> : null}
+        {selected.milestones?.length ? <section><SectionTitle>Calendario del proceso</SectionTitle><dl className="mt-4 grid gap-3 sm:grid-cols-2">{selected.milestones.map(entry => <div key={entry.label}><dt className="text-sm text-slate-400">{entry.label}</dt><dd className="text-sm font-semibold text-sky-100">{compactDate(entry.date)}</dd></div>)}</dl></section> : null}
         <div className="grid gap-8 md:grid-cols-2">
-          <section><SectionTitle>Alcance e ítems solicitados</SectionTitle><ul className="mt-4 space-y-3">{selected.requirements.map((requirement) => <li key={requirement} className="flex gap-3 text-sm leading-relaxed text-slate-400"><span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-cyan-400/10 text-cyan-300"><Check className="size-3" /></span>{requirement}</li>)}</ul></section>
+          <section><SectionTitle>Alcance e ítems solicitados</SectionTitle>{selected.requirements.length ? <ul className="mt-4 space-y-3">{selected.requirements.map((requirement,index) => <li key={`${index}-${requirement}`} className="flex gap-3 break-words text-sm leading-relaxed text-slate-400"><span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-cyan-400/10 text-cyan-300"><Check className="size-3" /></span>{requirement}</li>)}</ul> : <p className="mt-4 text-sm leading-relaxed text-slate-400">La fuente no entrega una lista de ítems separada. Revisa el alcance y los entregables en la descripción completa de arriba.</p>}</section>
           <section><SectionTitle>Cómo postular</SectionTitle><ol className="mt-4 space-y-3">{(selected.applicationSteps || [`Abre la fuente oficial y busca el ID ${selected.id}.`, 'Descarga y revisa las bases.', 'Prepara antecedentes técnicos y económicos.', 'Envía la oferta antes del cierre.']).map((step, index) => <li key={step} className="flex gap-3 text-sm leading-relaxed text-slate-400"><span className="grid size-5 shrink-0 place-items-center rounded-full bg-violet-400/15 text-[10px] font-bold text-violet-200">{index + 1}</span>{step}</li>)}</ol></section>
         </div>
+        {selected.contacts?.length ? <section><SectionTitle>Responsables publicados</SectionTitle><div className="mt-4 grid gap-3 sm:grid-cols-2">{selected.contacts.map((contact,index) => <div key={`${contact.role}-${index}`} className="rounded-xl border border-sky-300/15 p-4 text-sm"><p className="font-semibold text-cyan-200">{contact.role}</p><p className="mt-2 text-slate-200">{contact.name || 'Nombre no publicado'}</p>{contact.email ? <a className="mt-1 block break-all text-sky-300 underline" href={`mailto:${contact.email}`}>{contact.email}</a> : null}{contact.phone ? <p className="mt-1 text-slate-300">{contact.phone}</p> : null}</div>)}</div><p className="mt-3 text-sm text-slate-400">Un responsable administrativo no siempre recibe ofertas directamente; utiliza el canal de postulación del proceso.</p></section> : null}
+        {selected.documentLinks?.length ? <section><SectionTitle>Documentos y enlaces del aviso</SectionTitle><ul className="mt-3 space-y-3">{selected.documentLinks.filter(document => safeUrl(document.url)).map((document,index) => <li key={`${document.url}-${index}`}><a className="inline-flex gap-2 text-sm text-cyan-200 underline" href={safeUrl(document.url)} target="_blank" rel="noreferrer"><FileText className="size-4 shrink-0" />{document.title}</a></li>)}</ul></section> : null}
+        {!selected.documents.length && !selected.documentLinks?.length ? <p className="text-sm text-slate-400">No hay archivos adjuntos públicos disponibles en la respuesta de esta fuente.</p> : null}
         <section className="rounded-2xl border border-sky-300/12 bg-[#08152c] p-5"><div className="grid gap-6 sm:grid-cols-2"><div><p className="text-[10px] font-bold uppercase tracking-[.14em] text-cyan-300/60">Canal de contacto</p><p className="mt-2 text-sm leading-relaxed text-slate-300">{selected.contactChannel}</p>{selected.contactName || selected.contactEmail || selected.contactPhone ? <div className="mt-3 space-y-1 text-xs text-slate-400">{selected.contactName ? <p>{selected.contactName}</p> : null}{selected.contactEmail ? <a className="block font-semibold text-cyan-300 underline-offset-4 hover:underline" href={`mailto:${selected.contactEmail}`}>{selected.contactEmail}</a> : null}{selected.contactPhone ? <p>{selected.contactPhone}</p> : null}</div> : null}</div><div><p className="text-[10px] font-bold uppercase tracking-[.14em] text-cyan-300/60">Documentos clave</p><ul className="mt-2 space-y-1.5">{selected.documents.map((document) => <li key={document} className="flex items-center gap-2 text-sm text-slate-400"><FileText className="size-3.5 shrink-0 text-violet-300" />{document}</li>)}</ul></div></div></section>
         {selected.questionsDeadline ? <p className="flex items-start gap-2 rounded-xl border border-violet-300/15 bg-violet-400/10 px-4 py-3 text-xs leading-relaxed text-violet-100"><Clock3 className="mt-0.5 size-4 shrink-0" />Fecha publicada para preguntas: {compactDate(selected.questionsDeadline)}. Confirma cambios en el portal.</p> : null}
         <div className="flex flex-col-reverse gap-3 border-t border-sky-300/10 pt-6 sm:flex-row sm:items-center sm:justify-between"><p className="text-xs text-slate-500">Modalidad: {selected.modality}</p><a className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-cyan-300 px-5 text-sm font-bold text-[#03101f] shadow-[0_0_30px_rgba(103,232,249,.25)] transition hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300" href={selected.applicationUrl ?? selected.sourceUrl} target="_blank" rel="noreferrer">Ver y postular en fuente oficial <ArrowUpRight className="size-4" /></a></div>
